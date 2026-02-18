@@ -4,8 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "test": "cucumber-js",
+  "test:smoke": "cucumber-js --require-module ts-node/register --config cucumber.conf.ts -t @smoke",
+  "test:ui": "cucumber-js --require-module ts-node/register --config cucumber.conf.ts features/ui",
+  "test:api": "cucumber-js --require-module ts-node/register --config cucumber.conf.ts features/functional -t @api",
+  "test:parallel": "cucumber-js --require-module ts-node/register --config cucumber.conf.ts --parallel 3",
+  "report": "allure generate reports/allure-results -o reports/allure-report --clean",
+  "report:open": "powershell -Command Start-Process reports/allure-report",
+  "report:html": "cucumber-html-reporter --input reports/cucumber-report.json --output reports/html/cucumber-report.html"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -13,17 +20,17 @@
   "devDependencies": {
     "@cucumber/cucumber": "^10.9.0",
     "@playwright/test": "^1.58.2",
-    "@types/node": "^22.19.11",
-    "@typescript-eslint/eslint-plugin": "^8.56.0",
-    "@typescript-eslint/parser": "^8.56.0",
+    "@types/node": "^20.19.33",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
     "allure-commandline": "^2.36.0",
     "cucumber-html-reporter": "^7.2.0",
-    "eslint": "^9.39.2",
+    "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.2",
     "eslint-plugin-prettier": "^5.5.5",
     "prettier": "^3.8.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3",
+    "typescript": "^5.5.4",
     "winston": "^3.19.0"
   }
 }

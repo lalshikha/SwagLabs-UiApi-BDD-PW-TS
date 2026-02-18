@@ -1,0 +1,520 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "functional-api-login-validation;api-backend-validates-login-credentials",
+        "keyword": "Scenario Outline",
+        "line": 9,
+        "name": "API backend validates login credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 650158900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "API service validates standard_user login",
+            "match": {
+              "location": "step-definitions\\functional\\apiSteps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 563682600
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 43305800
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@functional",
+            "line": 1
+          },
+          {
+            "name": "@api",
+            "line": 1
+          },
+          {
+            "name": "@TCId-002",
+            "line": 1
+          },
+          {
+            "name": "@login",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "functional-api-login-validation;api-backend-validates-login-credentials",
+        "keyword": "Scenario Outline",
+        "line": 10,
+        "name": "API backend validates login credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 736955600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "API service validates visual_user login",
+            "match": {
+              "location": "step-definitions\\functional\\apiSteps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 270873900
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 45737300
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@functional",
+            "line": 1
+          },
+          {
+            "name": "@api",
+            "line": 1
+          },
+          {
+            "name": "@TCId-002",
+            "line": 1
+          },
+          {
+            "name": "@login",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "functional-api-login-validation",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Functional API Login Validation",
+    "tags": [
+      {
+        "name": "@regression",
+        "line": 1
+      },
+      {
+        "name": "@functional",
+        "line": 1
+      },
+      {
+        "name": "@api",
+        "line": 1
+      },
+      {
+        "name": "@TCId-002",
+        "line": 1
+      },
+      {
+        "name": "@login",
+        "line": 1
+      }
+    ],
+    "uri": "features\\functional\\login.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "ui-inventory-functionality;user-can-browse-inventory-and-add-items",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "User can browse inventory and add items",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 825616599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "user opens saucedemo application",
+            "match": {
+              "location": "step-definitions\\shared\\sharedSteps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2811181599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "user performs UI login with standard_user credentials",
+            "match": {
+              "location": "step-definitions\\ui\\uiSteps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 265587599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "user sees inventory page loaded",
+            "match": {
+              "location": "step-definitions\\ui\\uiSteps.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 34359000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "user adds first item to cart",
+            "match": {
+              "location": "step-definitions\\ui\\uiSteps.ts:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 79687599
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 35272300
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 1
+          },
+          {
+            "name": "@ui",
+            "line": 1
+          },
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@TCId-003",
+            "line": 1
+          },
+          {
+            "name": "@inventory",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "ui-inventory-functionality",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "UI Inventory Functionality",
+    "tags": [
+      {
+        "name": "@smoke",
+        "line": 1
+      },
+      {
+        "name": "@ui",
+        "line": 1
+      },
+      {
+        "name": "@regression",
+        "line": 1
+      },
+      {
+        "name": "@TCId-003",
+        "line": 1
+      },
+      {
+        "name": "@inventory",
+        "line": 1
+      }
+    ],
+    "uri": "features\\ui\\inventory.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "ui-login-functionality;valid-user-login-through-ui-flow",
+        "keyword": "Scenario Outline",
+        "line": 12,
+        "name": "Valid user login through UI flow",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 526348400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "user opens saucedemo application",
+            "match": {
+              "location": "step-definitions\\shared\\sharedSteps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2551905800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "user performs UI login with standard_user credentials",
+            "match": {
+              "location": "step-definitions\\ui\\uiSteps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 326188100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "UI login should be successful",
+            "match": {
+              "location": "step-definitions\\ui\\uiSteps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 44428399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "visual validation passes for login",
+            "match": {
+              "location": "step-definitions\\ui\\uiSteps.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 258589200
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 24100199
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 1
+          },
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@ui",
+            "line": 1
+          },
+          {
+            "name": "@TCId-001",
+            "line": 1
+          },
+          {
+            "name": "@login",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "ui-login-functionality;valid-user-login-through-ui-flow",
+        "keyword": "Scenario Outline",
+        "line": 13,
+        "name": "Valid user login through UI flow",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 730006800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "user opens saucedemo application",
+            "match": {
+              "location": "step-definitions\\shared\\sharedSteps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3158385900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "user performs UI login with visual_user credentials",
+            "match": {
+              "location": "step-definitions\\ui\\uiSteps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 274647300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "UI login should be successful",
+            "match": {
+              "location": "step-definitions\\ui\\uiSteps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 39229400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "visual validation passes for login",
+            "match": {
+              "location": "step-definitions\\ui\\uiSteps.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 285453899
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 30134799
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 1
+          },
+          {
+            "name": "@regression",
+            "line": 1
+          },
+          {
+            "name": "@ui",
+            "line": 1
+          },
+          {
+            "name": "@TCId-001",
+            "line": 1
+          },
+          {
+            "name": "@login",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "ui-login-functionality",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "UI Login Functionality",
+    "tags": [
+      {
+        "name": "@smoke",
+        "line": 1
+      },
+      {
+        "name": "@regression",
+        "line": 1
+      },
+      {
+        "name": "@ui",
+        "line": 1
+      },
+      {
+        "name": "@TCId-001",
+        "line": 1
+      },
+      {
+        "name": "@login",
+        "line": 1
+      }
+    ],
+    "uri": "features\\ui\\login.feature"
+  }
+]

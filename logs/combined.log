@@ -1,0 +1,273 @@
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 21:23:03"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 21:23:03"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 21:23:03"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 21:28:06"}
+{"level":"info","message":"API validating login for standard_user","timestamp":"2026-02-18 21:28:06"}
+{"level":"info","message":"API validating login for visual_user","timestamp":"2026-02-18 21:28:06"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 21:28:06"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 21:28:06"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 21:48:41"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 21:48:41"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 21:48:41"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:02:55"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:02:55"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:02:55"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:03:00"}
+{"level":"info","message":"Performing login for user: standard_user","timestamp":"2026-02-18 22:03:00"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:03:01"}
+{"level":"info","message":"Performing login for user: standard_user","timestamp":"2026-02-18 22:03:01"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:03:02"}
+{"level":"info","message":"Performing login for user: visual_user","timestamp":"2026-02-18 22:03:02"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:09:54"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:09:54"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:09:54"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:09:59"}
+{"level":"info","message":"Performing login for user: standard_user","timestamp":"2026-02-18 22:09:59"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:10:00"}
+{"level":"info","message":"Performing login for user: visual_user","timestamp":"2026-02-18 22:10:00"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:10:00"}
+{"level":"info","message":"Performing login for user: standard_user","timestamp":"2026-02-18 22:10:00"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:12:48"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:12:49"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:12:49"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:12:54"}
+{"level":"info","message":"Performing login for user: standard_user","timestamp":"2026-02-18 22:12:54"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:12:55"}
+{"level":"info","message":"Performing login for user: visual_user","timestamp":"2026-02-18 22:12:55"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:12:56"}
+{"level":"info","message":"Performing login for user: standard_user","timestamp":"2026-02-18 22:12:56"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:23:45"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:23:45"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:23:45"}
+{"level":"info","message":"API check: GET https://www.saucedemo.com/","timestamp":"2026-02-18 22:23:47"}
+{"level":"info","message":"API check: GET https://www.saucedemo.com/","timestamp":"2026-02-18 22:23:47"}
+{"level":"info","message":"API check passed: site reachable","timestamp":"2026-02-18 22:23:48"}
+{"level":"info","message":"API check passed: site reachable","timestamp":"2026-02-18 22:23:48"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:23:50"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:23:51"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:23:51"}
+{"level":"info","message":"Starting scenario: API backend validates login credentials","timestamp":"2026-02-18 22:31:11"}
+{"level":"info","message":"Starting scenario: API backend validates login credentials","timestamp":"2026-02-18 22:31:11"}
+{"level":"info","message":"Starting scenario: User can browse inventory and add items","timestamp":"2026-02-18 22:31:11"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:31:12"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:31:12"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:31:12"}
+{"level":"info","message":"API check: GET https://www.saucedemo.com/","timestamp":"2026-02-18 22:31:12"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:31:12"}
+{"level":"info","message":"API check: GET https://www.saucedemo.com/","timestamp":"2026-02-18 22:31:12"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:31:12"}
+{"level":"info","message":"API check passed: site reachable","timestamp":"2026-02-18 22:31:12"}
+{"level":"info","message":"API check passed: site reachable","timestamp":"2026-02-18 22:31:12"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:31:12"}
+{"level":"info","message":"Scenario finished: api_backend_validates_login_credentials","timestamp":"2026-02-18 22:31:12"}
+{"level":"info","message":"Scenario finished: api_backend_validates_login_credentials","timestamp":"2026-02-18 22:31:12"}
+{"level":"info","message":"Starting scenario: Valid user login through UI flow","timestamp":"2026-02-18 22:31:12"}
+{"level":"info","message":"Starting scenario: Valid user login through UI flow","timestamp":"2026-02-18 22:31:12"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:31:13"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:31:13"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:31:13"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:31:13"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:31:18"}
+{"level":"info","message":"Performing login for user: standard_user","timestamp":"2026-02-18 22:31:18"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:31:18"}
+{"level":"info","message":"Performing login for user: visual_user","timestamp":"2026-02-18 22:31:18"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:31:18"}
+{"level":"info","message":"Performing login for user: standard_user","timestamp":"2026-02-18 22:31:18"}
+{"level":"info","message":"Login button clicked","timestamp":"2026-02-18 22:31:19"}
+{"level":"info","message":"Login button clicked","timestamp":"2026-02-18 22:31:19"}
+{"level":"info","message":"Login button clicked","timestamp":"2026-02-18 22:31:19"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:31:19"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:31:19"}
+{"level":"info","message":"InventoryPage initialized","timestamp":"2026-02-18 22:31:19"}
+{"level":"info","message":"Login successful - inventory container visible","timestamp":"2026-02-18 22:31:19"}
+{"level":"info","message":"Login successful - inventory container visible","timestamp":"2026-02-18 22:31:19"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:31:19"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:31:19"}
+{"level":"info","message":"6 inventory items loaded","timestamp":"2026-02-18 22:31:19"}
+{"level":"info","message":"InventoryPage initialized","timestamp":"2026-02-18 22:31:19"}
+{"level":"info","message":"Captured screenshot: login.png","timestamp":"2026-02-18 22:31:19"}
+{"level":"info","message":"Scenario finished: valid_user_login_through_ui_flow","timestamp":"2026-02-18 22:31:19"}
+{"level":"info","message":"Captured screenshot: login.png","timestamp":"2026-02-18 22:31:19"}
+{"level":"info","message":"Scenario finished: valid_user_login_through_ui_flow","timestamp":"2026-02-18 22:31:19"}
+{"level":"error","message":"Scenario FAILED: user_can_browse_inventory_and_add_items Screenshot: screenshots/user_can_browse_inventory_and_add_items.png","timestamp":"2026-02-18 22:31:24"}
+{"level":"info","message":"Scenario finished: user_can_browse_inventory_and_add_items","timestamp":"2026-02-18 22:31:24"}
+{"level":"info","message":"Starting scenario: API backend validates login credentials","timestamp":"2026-02-18 22:33:59"}
+{"level":"info","message":"Starting scenario: API backend validates login credentials","timestamp":"2026-02-18 22:33:59"}
+{"level":"info","message":"Starting scenario: User can browse inventory and add items","timestamp":"2026-02-18 22:33:59"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:34:00"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:34:00"}
+{"level":"info","message":"API check: GET https://www.saucedemo.com/","timestamp":"2026-02-18 22:34:00"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:34:00"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:34:00"}
+{"level":"info","message":"API check: GET https://www.saucedemo.com/","timestamp":"2026-02-18 22:34:00"}
+{"level":"info","message":"API check passed: site reachable","timestamp":"2026-02-18 22:34:00"}
+{"level":"info","message":"Scenario finished: api_backend_validates_login_credentials","timestamp":"2026-02-18 22:34:00"}
+{"level":"info","message":"Starting scenario: Valid user login through UI flow","timestamp":"2026-02-18 22:34:00"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:34:00"}
+{"level":"info","message":"API check passed: site reachable","timestamp":"2026-02-18 22:34:00"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:34:00"}
+{"level":"info","message":"Scenario finished: api_backend_validates_login_credentials","timestamp":"2026-02-18 22:34:00"}
+{"level":"info","message":"Starting scenario: Valid user login through UI flow","timestamp":"2026-02-18 22:34:00"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:34:01"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:34:01"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:34:01"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:34:01"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:34:03"}
+{"level":"info","message":"Performing login for user: standard_user","timestamp":"2026-02-18 22:34:03"}
+{"level":"info","message":"Login button clicked","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"InventoryPage initialized","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"6 inventory items loaded","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"InventoryPage initialized","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"Added first item to cart and badge updated to 1","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"Performing login for user: visual_user","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"Scenario finished: user_can_browse_inventory_and_add_items","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"Performing login for user: standard_user","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"Login button clicked","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"Login successful - inventory container visible","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"Login button clicked","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"Login successful - inventory container visible","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"Captured screenshot: login.png","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"Scenario finished: valid_user_login_through_ui_flow","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"Captured screenshot: login.png","timestamp":"2026-02-18 22:34:04"}
+{"level":"info","message":"Scenario finished: valid_user_login_through_ui_flow","timestamp":"2026-02-18 22:34:05"}
+{"level":"info","message":"Starting scenario: API backend validates login credentials","timestamp":"2026-02-18 22:36:08"}
+{"level":"info","message":"Starting scenario: API backend validates login credentials","timestamp":"2026-02-18 22:36:08"}
+{"level":"info","message":"Starting scenario: User can browse inventory and add items","timestamp":"2026-02-18 22:36:09"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:36:09"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:36:09"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:36:09"}
+{"level":"info","message":"API check: GET https://www.saucedemo.com/","timestamp":"2026-02-18 22:36:09"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:36:09"}
+{"level":"info","message":"API check: GET https://www.saucedemo.com/","timestamp":"2026-02-18 22:36:09"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:36:09"}
+{"level":"info","message":"API check passed: site reachable","timestamp":"2026-02-18 22:36:09"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:36:09"}
+{"level":"info","message":"Scenario finished: api_backend_validates_login_credentials","timestamp":"2026-02-18 22:36:09"}
+{"level":"info","message":"Starting scenario: Valid user login through UI flow","timestamp":"2026-02-18 22:36:09"}
+{"level":"info","message":"API check passed: site reachable","timestamp":"2026-02-18 22:36:09"}
+{"level":"info","message":"Scenario finished: api_backend_validates_login_credentials","timestamp":"2026-02-18 22:36:09"}
+{"level":"info","message":"Starting scenario: Valid user login through UI flow","timestamp":"2026-02-18 22:36:09"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:36:10"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:36:10"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:36:10"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:36:10"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:36:12"}
+{"level":"info","message":"Performing login for user: standard_user","timestamp":"2026-02-18 22:36:12"}
+{"level":"info","message":"Login button clicked","timestamp":"2026-02-18 22:36:13"}
+{"level":"info","message":"InventoryPage initialized","timestamp":"2026-02-18 22:36:13"}
+{"level":"info","message":"6 inventory items loaded","timestamp":"2026-02-18 22:36:13"}
+{"level":"info","message":"InventoryPage initialized","timestamp":"2026-02-18 22:36:13"}
+{"level":"info","message":"Added first item to cart and badge updated to 1","timestamp":"2026-02-18 22:36:13"}
+{"level":"info","message":"Scenario finished: user_can_browse_inventory_and_add_items","timestamp":"2026-02-18 22:36:13"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:36:13"}
+{"level":"info","message":"Performing login for user: visual_user","timestamp":"2026-02-18 22:36:13"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:36:13"}
+{"level":"info","message":"Performing login for user: standard_user","timestamp":"2026-02-18 22:36:13"}
+{"level":"info","message":"Login button clicked","timestamp":"2026-02-18 22:36:13"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:36:13"}
+{"level":"info","message":"Login successful - inventory container visible","timestamp":"2026-02-18 22:36:13"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:36:13"}
+{"level":"info","message":"Login button clicked","timestamp":"2026-02-18 22:36:13"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:36:13"}
+{"level":"info","message":"Login successful - inventory container visible","timestamp":"2026-02-18 22:36:13"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:36:13"}
+{"level":"info","message":"Captured screenshot: login.png","timestamp":"2026-02-18 22:36:14"}
+{"level":"info","message":"Scenario finished: valid_user_login_through_ui_flow","timestamp":"2026-02-18 22:36:14"}
+{"level":"info","message":"Captured screenshot: login.png","timestamp":"2026-02-18 22:36:14"}
+{"level":"info","message":"Scenario finished: valid_user_login_through_ui_flow","timestamp":"2026-02-18 22:36:14"}
+{"level":"info","message":"Starting scenario: API backend validates login credentials","timestamp":"2026-02-18 22:37:25"}
+{"level":"info","message":"Starting scenario: API backend validates login credentials","timestamp":"2026-02-18 22:37:25"}
+{"level":"info","message":"Starting scenario: User can browse inventory and add items","timestamp":"2026-02-18 22:37:25"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:37:25"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:37:25"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:37:25"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:37:25"}
+{"level":"info","message":"API check: GET https://www.saucedemo.com/","timestamp":"2026-02-18 22:37:25"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:37:25"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:37:25"}
+{"level":"info","message":"API check: GET https://www.saucedemo.com/","timestamp":"2026-02-18 22:37:25"}
+{"level":"info","message":"API check passed: site reachable","timestamp":"2026-02-18 22:37:26"}
+{"level":"info","message":"API check passed: site reachable","timestamp":"2026-02-18 22:37:26"}
+{"level":"info","message":"Scenario finished: api_backend_validates_login_credentials","timestamp":"2026-02-18 22:37:26"}
+{"level":"info","message":"Starting scenario: Valid user login through UI flow","timestamp":"2026-02-18 22:37:26"}
+{"level":"info","message":"Scenario finished: api_backend_validates_login_credentials","timestamp":"2026-02-18 22:37:26"}
+{"level":"info","message":"Starting scenario: Valid user login through UI flow","timestamp":"2026-02-18 22:37:26"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:37:26"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:37:26"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:37:26"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:37:26"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:37:28"}
+{"level":"info","message":"Performing login for user: standard_user","timestamp":"2026-02-18 22:37:28"}
+{"level":"info","message":"Login button clicked","timestamp":"2026-02-18 22:37:29"}
+{"level":"info","message":"InventoryPage initialized","timestamp":"2026-02-18 22:37:29"}
+{"level":"info","message":"6 inventory items loaded","timestamp":"2026-02-18 22:37:29"}
+{"level":"info","message":"InventoryPage initialized","timestamp":"2026-02-18 22:37:29"}
+{"level":"info","message":"Added first item to cart and badge updated to 1","timestamp":"2026-02-18 22:37:29"}
+{"level":"info","message":"Scenario finished: user_can_browse_inventory_and_add_items","timestamp":"2026-02-18 22:37:29"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:37:29"}
+{"level":"info","message":"Performing login for user: standard_user","timestamp":"2026-02-18 22:37:29"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:37:29"}
+{"level":"info","message":"Performing login for user: visual_user","timestamp":"2026-02-18 22:37:29"}
+{"level":"info","message":"Login button clicked","timestamp":"2026-02-18 22:37:29"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:37:29"}
+{"level":"info","message":"Login successful - inventory container visible","timestamp":"2026-02-18 22:37:29"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:37:29"}
+{"level":"info","message":"Login button clicked","timestamp":"2026-02-18 22:37:29"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:37:29"}
+{"level":"info","message":"Login successful - inventory container visible","timestamp":"2026-02-18 22:37:29"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:37:29"}
+{"level":"info","message":"Captured screenshot: login.png","timestamp":"2026-02-18 22:37:30"}
+{"level":"info","message":"Scenario finished: valid_user_login_through_ui_flow","timestamp":"2026-02-18 22:37:30"}
+{"level":"info","message":"Captured screenshot: login.png","timestamp":"2026-02-18 22:37:30"}
+{"level":"info","message":"Scenario finished: valid_user_login_through_ui_flow","timestamp":"2026-02-18 22:37:30"}
+{"level":"info","message":"Starting scenario: API backend validates login credentials","timestamp":"2026-02-18 22:41:15"}
+{"level":"info","message":"Starting scenario: API backend validates login credentials","timestamp":"2026-02-18 22:41:15"}
+{"level":"info","message":"Starting scenario: User can browse inventory and add items","timestamp":"2026-02-18 22:41:15"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:41:16"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:41:16"}
+{"level":"info","message":"API check: GET https://www.saucedemo.com/","timestamp":"2026-02-18 22:41:16"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:41:16"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:41:16"}
+{"level":"info","message":"API check: GET https://www.saucedemo.com/","timestamp":"2026-02-18 22:41:16"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:41:16"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:41:16"}
+{"level":"info","message":"API check passed: site reachable","timestamp":"2026-02-18 22:41:16"}
+{"level":"info","message":"Scenario finished: api_backend_validates_login_credentials","timestamp":"2026-02-18 22:41:16"}
+{"level":"info","message":"Starting scenario: Valid user login through UI flow","timestamp":"2026-02-18 22:41:16"}
+{"level":"info","message":"API check passed: site reachable","timestamp":"2026-02-18 22:41:16"}
+{"level":"info","message":"Scenario finished: api_backend_validates_login_credentials","timestamp":"2026-02-18 22:41:16"}
+{"level":"info","message":"Starting scenario: Valid user login through UI flow","timestamp":"2026-02-18 22:41:16"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:41:17"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:41:17"}
+{"level":"info","message":"World test users available: standard_user,visual_user","timestamp":"2026-02-18 22:41:17"}
+{"level":"info","message":"Browser launched successfully","timestamp":"2026-02-18 22:41:17"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:41:19"}
+{"level":"info","message":"Performing login for user: standard_user","timestamp":"2026-02-18 22:41:19"}
+{"level":"info","message":"Login button clicked","timestamp":"2026-02-18 22:41:19"}
+{"level":"info","message":"InventoryPage initialized","timestamp":"2026-02-18 22:41:19"}
+{"level":"info","message":"6 inventory items loaded","timestamp":"2026-02-18 22:41:19"}
+{"level":"info","message":"InventoryPage initialized","timestamp":"2026-02-18 22:41:19"}
+{"level":"info","message":"Added first item to cart and badge updated to 1","timestamp":"2026-02-18 22:41:19"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:41:19"}
+{"level":"info","message":"Performing login for user: standard_user","timestamp":"2026-02-18 22:41:19"}
+{"level":"info","message":"Scenario finished: user_can_browse_inventory_and_add_items","timestamp":"2026-02-18 22:41:19"}
+{"level":"info","message":"Login button clicked","timestamp":"2026-02-18 22:41:20"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:41:20"}
+{"level":"info","message":"Login successful - inventory container visible","timestamp":"2026-02-18 22:41:20"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:41:20"}
+{"level":"info","message":"Captured screenshot: login.png","timestamp":"2026-02-18 22:41:20"}
+{"level":"info","message":"Scenario finished: valid_user_login_through_ui_flow","timestamp":"2026-02-18 22:41:20"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:41:20"}
+{"level":"info","message":"Performing login for user: visual_user","timestamp":"2026-02-18 22:41:20"}
+{"level":"info","message":"Login button clicked","timestamp":"2026-02-18 22:41:21"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:41:21"}
+{"level":"info","message":"Login successful - inventory container visible","timestamp":"2026-02-18 22:41:21"}
+{"level":"info","message":"LoginPage initialized","timestamp":"2026-02-18 22:41:21"}
+{"level":"info","message":"Captured screenshot: login.png","timestamp":"2026-02-18 22:41:21"}
+{"level":"info","message":"Scenario finished: valid_user_login_through_ui_flow","timestamp":"2026-02-18 22:41:21"}
