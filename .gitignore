@@ -10,7 +10,7 @@ screenshots/visual/actual/
 screenshots/visual/diff/
 
 # Logs (adjust to your project)
-log/
+logs/
 *.log
 
 # OS / IDE
