@@ -1,20 +1,33 @@
 # Dependencies
 node_modules/
 
-# Playwright artifacts (common defaults)
-test-results/
-reports/
-reports/cucumber-report.json
-
-# Visual regression artifacts (commit baselines only)
-screenshots/visual/actual/
-screenshots/visual/diff/
-
-# Logs (adjust to your project)
+# Runtime logs (you have /logs with *.log files)
 logs/
 *.log
 
-# OS / IDE
+# Reports (generated outputs)
+reports/allure-results/
+reports/html/
+reports/cucumber-report.json
+
+# Visual compare outputs (keep baseline, ignore generated actual/diff)
+reports/screenshots/visual/actual/
+reports/screenshots/visual/diff/
+reports/test.png
+
+# Common Playwright artifacts (safe to ignore if they appear)
+playwright-report/
+test-results/
+blob-report/
+
+# Common local secrets (safe defaults)
+.env
+.env.*
+*.pem
+*.p12
+
+# OS / IDE noise (safe defaults)
 .DS_Store
-.idea/
+Thumbs.db
 .vscode/
+.idea/
