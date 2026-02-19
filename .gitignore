@@ -4,6 +4,7 @@ node_modules/
 # Playwright artifacts (common defaults)
 test-results/
 reports/
+reports/cucumber-report.json
 
 # Visual regression artifacts (commit baselines only)
 screenshots/visual/actual/
