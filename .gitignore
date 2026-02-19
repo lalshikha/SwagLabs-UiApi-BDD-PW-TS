@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Playwright artifacts (common defaults)
+test-results/
+reports/
+
+# Visual regression artifacts (commit baselines only)
+screenshots/visual/actual/
+screenshots/visual/diff/
+
+# Logs (adjust to your project)
+log/
+*.log
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/

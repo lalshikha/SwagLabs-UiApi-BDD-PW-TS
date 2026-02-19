@@ -46,10 +46,4 @@ export default class LoginPage extends BasePage {
     await expect(this.errorBanner).toBeVisible();
     this.logger.info('Login error banner visible');
   }
-
-  // “Visual test” lightweight: capture screenshot artifact (no pixel-compare yet)
-  async captureLoginScreenshot(fileName: string): Promise<void> {
-    await this.page.screenshot({ path: 'screenshots/' + fileName, fullPage: true });
-    this.logger.info('Captured screenshot: ' + fileName);
-  }
 }
