@@ -1,0 +1,594 @@
+2026-02-19T06:52:14.737Z [info]: Starting test
+2026-02-19T06:52:14.737Z [info]: Starting test
+2026-02-19T06:52:14.754Z [info]: Starting test
+2026-02-19T06:52:17.148Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T06:52:17.238Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T06:52:17.981Z [info]: Starting test
+2026-02-19T06:52:17.982Z [info]: Starting test
+2026-02-19T06:52:23.663Z [info]: LoginPage initialized
+2026-02-19T06:52:23.664Z [info]: Performing login for user: standard_user
+2026-02-19T06:52:24.024Z [info]: Login button clicked
+2026-02-19T06:52:24.028Z [info]: LoginPage initialized
+2026-02-19T06:52:24.030Z [info]: LoginPage initialized
+2026-02-19T06:52:24.031Z [info]: Performing login for user: visual_user
+2026-02-19T06:52:24.030Z [info]: Performing login for user: standard_user
+2026-02-19T06:52:24.033Z [info]: InventoryPage initialized
+2026-02-19T06:52:24.079Z [info]: 6 inventory items loaded
+2026-02-19T06:52:24.083Z [info]: InventoryPage initialized
+2026-02-19T06:52:24.215Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T06:52:24.410Z [info]: Login button clicked
+2026-02-19T06:52:24.414Z [info]: LoginPage initialized
+2026-02-19T06:52:24.451Z [info]: Login successful - inventory container visible
+2026-02-19T06:52:24.462Z [info]: LoginPage initialized
+2026-02-19T06:52:24.537Z [info]: Login button clicked
+2026-02-19T06:52:24.541Z [info]: LoginPage initialized
+2026-02-19T06:52:24.571Z [info]: Login successful - inventory container visible
+2026-02-19T06:52:24.574Z [info]: LoginPage initialized
+2026-02-19T06:52:24.772Z [info]: Captured screenshot: login.png
+2026-02-19T06:52:24.861Z [info]: Captured screenshot: login.png
+2026-02-19T08:02:14.881Z [info]: Starting test
+2026-02-19T08:02:14.901Z [info]: Starting test
+2026-02-19T08:02:15.066Z [info]: Starting test
+2026-02-19T08:02:16.799Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T08:02:17.009Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T08:02:17.518Z [info]: API check passed: site reachable
+2026-02-19T08:02:17.525Z [info]: API check passed: site reachable
+2026-02-19T08:02:17.569Z [info]: Starting test
+2026-02-19T08:02:17.576Z [info]: Starting test
+2026-02-19T08:02:22.613Z [info]: LoginPage initialized
+2026-02-19T08:02:22.614Z [info]: Performing login for user: standard_user
+2026-02-19T08:02:22.657Z [info]: LoginPage initialized
+2026-02-19T08:02:22.658Z [info]: Performing login for user: visual_user
+2026-02-19T08:02:23.043Z [info]: Login button clicked
+2026-02-19T08:02:23.069Z [info]: Login button clicked
+2026-02-19T08:02:23.054Z [info]: InventoryPage initialized
+2026-02-19T08:02:23.078Z [info]: LoginPage initialized
+2026-02-19T08:02:23.124Z [info]: 6 inventory items loaded
+2026-02-19T08:02:23.132Z [info]: InventoryPage initialized
+2026-02-19T08:02:23.254Z [info]: Login successful - inventory container visible
+2026-02-19T08:02:23.259Z [info]: LoginPage initialized
+2026-02-19T08:02:23.276Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T08:02:23.499Z [info]: LoginPage initialized
+2026-02-19T08:02:23.564Z [info]: Performing login for user: standard_user
+2026-02-19T08:02:23.724Z [info]: Captured screenshot: login.png
+2026-02-19T08:02:24.094Z [info]: Login button clicked
+2026-02-19T08:02:24.100Z [info]: LoginPage initialized
+2026-02-19T08:02:24.132Z [info]: Login successful - inventory container visible
+2026-02-19T08:02:24.136Z [info]: LoginPage initialized
+2026-02-19T08:02:24.421Z [info]: Captured screenshot: login.png
+2026-02-19T08:08:29.687Z [info]: Starting test
+2026-02-19T08:08:29.715Z [info]: Starting test
+2026-02-19T08:08:29.806Z [info]: Starting test
+2026-02-19T08:08:30.519Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T08:08:30.619Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T08:08:31.018Z [info]: API check passed: site reachable
+2026-02-19T08:08:31.080Z [info]: Starting test
+2026-02-19T08:08:31.101Z [info]: API check passed: site reachable
+2026-02-19T08:08:31.159Z [info]: Starting test
+2026-02-19T08:08:33.832Z [info]: LoginPage initialized
+2026-02-19T08:08:33.833Z [info]: Performing login for user: standard_user
+2026-02-19T08:08:34.153Z [info]: Login button clicked
+2026-02-19T08:08:34.157Z [info]: InventoryPage initialized
+2026-02-19T08:08:34.192Z [info]: 6 inventory items loaded
+2026-02-19T08:08:34.196Z [info]: InventoryPage initialized
+2026-02-19T08:08:34.272Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T08:08:34.393Z [info]: LoginPage initialized
+2026-02-19T08:08:34.394Z [info]: Performing login for user: visual_user
+2026-02-19T08:08:34.429Z [info]: LoginPage initialized
+2026-02-19T08:08:34.433Z [info]: Performing login for user: standard_user
+2026-02-19T08:08:34.783Z [info]: Login button clicked
+2026-02-19T08:08:34.778Z [info]: Login button clicked
+2026-02-19T08:08:34.789Z [info]: LoginPage initialized
+2026-02-19T08:08:34.783Z [info]: LoginPage initialized
+2026-02-19T08:08:34.814Z [info]: Login successful - inventory container visible
+2026-02-19T08:08:34.816Z [info]: LoginPage initialized
+2026-02-19T08:08:35.661Z [info]: Login successful - inventory container visible
+2026-02-19T08:08:35.657Z [info]: Captured screenshot: login.png
+2026-02-19T08:08:35.667Z [info]: LoginPage initialized
+2026-02-19T08:08:36.093Z [info]: Captured screenshot: login.png
+2026-02-19T08:09:16.144Z [info]: Starting test
+2026-02-19T08:09:16.196Z [info]: Starting test
+2026-02-19T08:09:16.313Z [info]: Starting test
+2026-02-19T08:09:16.900Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T08:09:17.160Z [info]: API check passed: site reachable
+2026-02-19T08:09:17.224Z [info]: Starting test
+2026-02-19T08:09:17.292Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T08:09:17.609Z [info]: API check passed: site reachable
+2026-02-19T08:09:17.665Z [info]: Starting test
+2026-02-19T08:09:20.049Z [info]: LoginPage initialized
+2026-02-19T08:09:20.050Z [info]: Performing login for user: standard_user
+2026-02-19T08:09:20.333Z [info]: Login button clicked
+2026-02-19T08:09:20.338Z [info]: InventoryPage initialized
+2026-02-19T08:09:20.374Z [info]: 6 inventory items loaded
+2026-02-19T08:09:20.377Z [info]: InventoryPage initialized
+2026-02-19T08:09:20.445Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T08:31:41.504Z [info]: Starting test
+2026-02-19T08:31:41.518Z [info]: Starting test
+2026-02-19T08:31:42.083Z [info]: Starting test
+2026-02-19T08:31:42.214Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T08:31:42.325Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T08:31:42.459Z [info]: API check passed: site reachable
+2026-02-19T08:31:42.527Z [info]: Starting test
+2026-02-19T08:31:42.529Z [info]: API check passed: site reachable
+2026-02-19T08:31:42.632Z [info]: Starting test
+2026-02-19T08:31:48.922Z [info]: LoginPage initialized
+2026-02-19T08:31:48.924Z [info]: Performing login for user: standard_user
+2026-02-19T08:31:49.418Z [info]: Login button clicked
+2026-02-19T08:31:49.425Z [info]: InventoryPage initialized
+2026-02-19T08:31:49.474Z [info]: 6 inventory items loaded
+2026-02-19T08:31:49.478Z [info]: InventoryPage initialized
+2026-02-19T08:31:49.576Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T08:33:25.938Z [info]: Starting test
+2026-02-19T08:33:26.027Z [info]: Starting test
+2026-02-19T08:33:26.128Z [info]: Starting test
+2026-02-19T08:33:26.727Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T08:33:26.999Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T08:33:27.006Z [info]: API check passed: site reachable
+2026-02-19T08:33:27.103Z [info]: Starting test
+2026-02-19T08:33:27.269Z [info]: API check passed: site reachable
+2026-02-19T08:33:27.320Z [info]: Starting test
+2026-02-19T08:33:29.766Z [info]: LoginPage initialized
+2026-02-19T08:33:29.767Z [info]: Performing login for user: standard_user
+2026-02-19T08:33:30.043Z [info]: Login button clicked
+2026-02-19T08:33:30.047Z [info]: InventoryPage initialized
+2026-02-19T08:33:30.090Z [info]: 6 inventory items loaded
+2026-02-19T08:33:30.093Z [info]: InventoryPage initialized
+2026-02-19T08:33:30.177Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T08:34:39.978Z [info]: Starting test
+2026-02-19T08:34:40.086Z [info]: Starting test
+2026-02-19T08:34:40.612Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T08:34:40.532Z [info]: Starting test
+2026-02-19T08:34:40.823Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T08:34:40.834Z [info]: API check passed: site reachable
+2026-02-19T08:34:40.901Z [info]: Starting test
+2026-02-19T08:34:41.057Z [info]: API check passed: site reachable
+2026-02-19T08:34:41.126Z [info]: Starting test
+2026-02-19T08:34:44.345Z [info]: LoginPage initialized
+2026-02-19T08:34:44.346Z [info]: Performing login for user: standard_user
+2026-02-19T08:34:44.730Z [info]: Login button clicked
+2026-02-19T08:34:44.734Z [info]: InventoryPage initialized
+2026-02-19T08:34:44.781Z [info]: 6 inventory items loaded
+2026-02-19T08:34:44.786Z [info]: InventoryPage initialized
+2026-02-19T08:34:44.871Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T08:37:10.424Z [info]: Starting test
+2026-02-19T08:37:10.446Z [info]: Starting test
+2026-02-19T08:37:10.602Z [info]: Starting test
+2026-02-19T08:37:11.317Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T08:37:11.632Z [info]: API check passed: site reachable
+2026-02-19T08:37:11.746Z [info]: Starting test
+2026-02-19T08:37:12.110Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T08:37:12.410Z [info]: API check passed: site reachable
+2026-02-19T08:37:12.504Z [info]: Starting test
+2026-02-19T08:37:14.451Z [info]: LoginPage initialized
+2026-02-19T08:37:14.452Z [info]: Performing login for user: standard_user
+2026-02-19T08:37:14.758Z [info]: Login button clicked
+2026-02-19T08:37:14.762Z [info]: InventoryPage initialized
+2026-02-19T08:37:14.802Z [info]: 6 inventory items loaded
+2026-02-19T08:37:14.804Z [info]: InventoryPage initialized
+2026-02-19T08:37:14.901Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T08:37:15.381Z [info]: LoginPage initialized
+2026-02-19T08:37:15.541Z [info]: Captured screenshot: pageUnderTest_login.png
+2026-02-19T08:37:15.546Z [info]: LoginPage initialized
+2026-02-19T08:37:15.548Z [info]: Performing login for user: standard_user
+2026-02-19T08:37:15.794Z [info]: Login button clicked
+2026-02-19T08:37:15.797Z [info]: LoginPage initialized
+2026-02-19T08:37:15.816Z [info]: Login successful - inventory container visible
+2026-02-19T08:37:15.817Z [info]: LoginPage initialized
+2026-02-19T08:37:15.869Z [info]: LoginPage initialized
+2026-02-19T08:37:16.015Z [info]: Captured screenshot: pageUnderTest_login.png
+2026-02-19T08:37:16.018Z [info]: LoginPage initialized
+2026-02-19T08:37:16.019Z [info]: Performing login for user: visual_user
+2026-02-19T08:37:16.050Z [info]: Captured screenshot: pageUnderTest_inventory.png
+2026-02-19T08:37:16.278Z [info]: Login button clicked
+2026-02-19T08:37:16.282Z [info]: LoginPage initialized
+2026-02-19T08:37:16.314Z [info]: Login successful - inventory container visible
+2026-02-19T08:37:16.315Z [info]: LoginPage initialized
+2026-02-19T08:37:16.561Z [info]: Captured screenshot: pageUnderTest_inventory.png
+2026-02-19T08:38:59.561Z [info]: Starting test
+2026-02-19T08:38:59.674Z [info]: Starting test
+2026-02-19T08:38:59.874Z [info]: Starting test
+2026-02-19T08:39:00.503Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T08:39:00.670Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T08:39:00.878Z [info]: API check passed: site reachable
+2026-02-19T08:39:00.968Z [info]: Starting test
+2026-02-19T08:39:00.978Z [info]: API check passed: site reachable
+2026-02-19T08:39:01.032Z [info]: Starting test
+2026-02-19T08:39:03.908Z [info]: LoginPage initialized
+2026-02-19T08:39:03.909Z [info]: Performing login for user: standard_user
+2026-02-19T08:39:04.174Z [info]: Login button clicked
+2026-02-19T08:39:04.177Z [info]: InventoryPage initialized
+2026-02-19T08:39:04.207Z [info]: 6 inventory items loaded
+2026-02-19T08:39:04.210Z [info]: InventoryPage initialized
+2026-02-19T08:39:04.289Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T08:39:04.395Z [info]: LoginPage initialized
+2026-02-19T08:39:04.406Z [info]: LoginPage initialized
+2026-02-19T08:39:04.578Z [info]: Captured screenshot: pageUnderTest_login.png
+2026-02-19T08:39:04.585Z [info]: Captured screenshot: pageUnderTest_login.png
+2026-02-19T08:39:04.582Z [info]: LoginPage initialized
+2026-02-19T08:39:04.583Z [info]: Performing login for user: standard_user
+2026-02-19T08:39:04.591Z [info]: LoginPage initialized
+2026-02-19T08:39:04.594Z [info]: Performing login for user: visual_user
+2026-02-19T08:39:04.862Z [info]: Login button clicked
+2026-02-19T08:39:04.867Z [info]: LoginPage initialized
+2026-02-19T08:39:04.892Z [info]: Login button clicked
+2026-02-19T08:39:04.902Z [info]: Login successful - inventory container visible
+2026-02-19T08:39:04.904Z [info]: LoginPage initialized
+2026-02-19T08:39:04.896Z [info]: LoginPage initialized
+2026-02-19T08:39:04.927Z [info]: Login successful - inventory container visible
+2026-02-19T08:39:04.930Z [info]: LoginPage initialized
+2026-02-19T08:39:05.158Z [info]: Captured screenshot: pageUnderTest_inventory.png
+2026-02-19T08:39:05.188Z [info]: Captured screenshot: pageUnderTest_inventory.png
+2026-02-19T11:25:35.475Z [info]: Starting test
+2026-02-19T11:25:35.586Z [info]: Starting test
+2026-02-19T11:25:35.597Z [info]: Starting test
+2026-02-19T11:25:37.942Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T11:25:37.968Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T11:25:38.161Z [info]: API check passed: site reachable
+2026-02-19T11:25:38.160Z [info]: API check passed: site reachable
+2026-02-19T11:25:38.190Z [info]: Starting test
+2026-02-19T11:25:38.193Z [info]: Starting test
+2026-02-19T11:25:43.564Z [info]: LoginPage initialized
+2026-02-19T11:25:43.588Z [info]: LoginPage initialized
+2026-02-19T11:25:43.631Z [info]: LoginPage initialized
+2026-02-19T11:25:43.632Z [info]: Performing login for user: standard_user
+2026-02-19T11:25:43.757Z [info]: Captured screenshot: pageUnderTest_login.png
+2026-02-19T11:25:43.758Z [info]: Captured screenshot: pageUnderTest_login.png
+2026-02-19T11:25:43.761Z [info]: LoginPage initialized
+2026-02-19T11:25:43.762Z [info]: Performing login for user: standard_user
+2026-02-19T11:25:43.760Z [info]: LoginPage initialized
+2026-02-19T11:25:43.761Z [info]: Performing login for user: visual_user
+2026-02-19T11:25:43.998Z [info]: Login button clicked
+2026-02-19T11:25:43.996Z [info]: Login button clicked
+2026-02-19T11:25:44.016Z [info]: Login button clicked
+2026-02-19T11:25:44.006Z [info]: LoginPage initialized
+2026-02-19T11:25:44.006Z [info]: InventoryPage initialized
+2026-02-19T11:25:44.031Z [info]: Login successful - inventory container visible
+2026-02-19T11:25:44.033Z [info]: LoginPage initialized
+2026-02-19T11:25:44.020Z [info]: LoginPage initialized
+2026-02-19T11:25:44.044Z [info]: Login successful - inventory container visible
+2026-02-19T11:25:44.043Z [info]: 6 inventory items loaded
+2026-02-19T11:25:44.045Z [info]: LoginPage initialized
+2026-02-19T11:25:44.046Z [info]: InventoryPage initialized
+2026-02-19T11:25:44.111Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T11:25:44.305Z [info]: Captured screenshot: pageUnderTest_inventory.png
+2026-02-19T11:25:44.339Z [info]: Captured screenshot: pageUnderTest_inventory.png
+2026-02-19T11:34:49.194Z [info]: Starting test
+2026-02-19T11:34:49.220Z [info]: Starting test
+2026-02-19T11:34:49.319Z [info]: Starting test
+2026-02-19T11:34:49.990Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T11:34:50.011Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T11:34:50.246Z [info]: API check passed: site reachable
+2026-02-19T11:34:50.249Z [info]: API check passed: site reachable
+2026-02-19T11:34:50.279Z [info]: Starting test
+2026-02-19T11:34:50.277Z [info]: Starting test
+2026-02-19T11:34:55.622Z [info]: CommonPage initialized
+2026-02-19T11:34:55.623Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:34:55.669Z [info]: CommonPage initialized
+2026-02-19T11:34:55.668Z [info]: LoginPage initialized
+2026-02-19T11:34:55.670Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:34:55.669Z [info]: Performing login for user: standard_user
+2026-02-19T11:34:55.945Z [info]: Login button clicked
+2026-02-19T11:34:55.949Z [info]: InventoryPage initialized
+2026-02-19T11:34:55.977Z [info]: 6 inventory items loaded
+2026-02-19T11:34:55.979Z [info]: InventoryPage initialized
+2026-02-19T11:34:56.042Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T11:34:56.230Z [info]: LoginPage initialized
+2026-02-19T11:34:56.230Z [info]: Performing login for user: visual_user
+2026-02-19T11:34:56.325Z [info]: LoginPage initialized
+2026-02-19T11:34:56.326Z [info]: Performing login for user: standard_user
+2026-02-19T11:34:56.525Z [info]: Login button clicked
+2026-02-19T11:34:56.529Z [info]: LoginPage initialized
+2026-02-19T11:34:56.556Z [info]: Login successful - inventory container visible
+2026-02-19T11:34:56.559Z [info]: CommonPage initialized
+2026-02-19T11:34:56.559Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:34:56.618Z [info]: Login button clicked
+2026-02-19T11:34:56.622Z [info]: LoginPage initialized
+2026-02-19T11:34:56.649Z [info]: Login successful - inventory container visible
+2026-02-19T11:34:56.650Z [info]: CommonPage initialized
+2026-02-19T11:34:56.651Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:40:59.398Z [info]: Starting test
+2026-02-19T11:40:59.498Z [info]: Starting test
+2026-02-19T11:40:59.498Z [info]: Starting test
+2026-02-19T11:41:00.064Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T11:41:00.161Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T11:41:00.294Z [info]: API check passed: site reachable
+2026-02-19T11:41:00.323Z [info]: Starting test
+2026-02-19T11:41:00.353Z [info]: API check passed: site reachable
+2026-02-19T11:41:00.382Z [info]: Starting test
+2026-02-19T11:41:03.080Z [info]: LoginPage initialized
+2026-02-19T11:41:03.080Z [info]: Performing login for user: standard_user
+2026-02-19T11:41:03.304Z [info]: Login button clicked
+2026-02-19T11:41:03.307Z [info]: InventoryPage initialized
+2026-02-19T11:41:03.331Z [info]: 6 inventory items loaded
+2026-02-19T11:41:03.333Z [info]: InventoryPage initialized
+2026-02-19T11:41:03.387Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T11:41:03.578Z [info]: CommonPage initialized
+2026-02-19T11:41:03.578Z [info]: CommonPage initialized
+2026-02-19T11:41:03.579Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:41:03.579Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:41:04.015Z [info]: LoginPage initialized
+2026-02-19T11:41:04.016Z [info]: Performing login for user: standard_user
+2026-02-19T11:41:04.021Z [info]: LoginPage initialized
+2026-02-19T11:41:04.022Z [info]: Performing login for user: visual_user
+2026-02-19T11:41:04.249Z [info]: Login button clicked
+2026-02-19T11:41:04.253Z [info]: Login button clicked
+2026-02-19T11:41:04.255Z [info]: LoginPage initialized
+2026-02-19T11:41:04.257Z [info]: LoginPage initialized
+2026-02-19T11:41:04.277Z [info]: Login successful - inventory container visible
+2026-02-19T11:41:04.279Z [info]: Login successful - inventory container visible
+2026-02-19T11:41:04.278Z [info]: CommonPage initialized
+2026-02-19T11:41:04.279Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:41:04.280Z [info]: CommonPage initialized
+2026-02-19T11:41:04.281Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:46:56.606Z [info]: Starting test
+2026-02-19T11:46:56.610Z [info]: Starting test
+2026-02-19T11:46:56.650Z [info]: Starting test
+2026-02-19T11:46:57.255Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T11:46:57.266Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T11:46:57.424Z [info]: API check passed: site reachable
+2026-02-19T11:46:57.451Z [info]: Starting test
+2026-02-19T11:46:57.464Z [info]: API check passed: site reachable
+2026-02-19T11:46:57.496Z [info]: Starting test
+2026-02-19T11:46:59.833Z [info]: LoginPage initialized
+2026-02-19T11:46:59.834Z [info]: Performing login for user: standard_user
+2026-02-19T11:47:00.057Z [info]: Login button clicked
+2026-02-19T11:47:00.060Z [info]: InventoryPage initialized
+2026-02-19T11:47:00.091Z [info]: 6 inventory items loaded
+2026-02-19T11:47:00.093Z [info]: InventoryPage initialized
+2026-02-19T11:47:00.167Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T11:47:00.366Z [info]: CommonPage initialized
+2026-02-19T11:47:00.393Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:47:00.483Z [info]: CommonPage initialized
+2026-02-19T11:47:00.505Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:47:00.860Z [info]: LoginPage initialized
+2026-02-19T11:47:00.861Z [info]: Performing login for user: standard_user
+2026-02-19T11:47:01.031Z [info]: LoginPage initialized
+2026-02-19T11:47:01.032Z [info]: Performing login for user: visual_user
+2026-02-19T11:47:01.100Z [info]: Login button clicked
+2026-02-19T11:47:01.103Z [info]: LoginPage initialized
+2026-02-19T11:47:01.123Z [info]: Login successful - inventory container visible
+2026-02-19T11:47:01.124Z [info]: CommonPage initialized
+2026-02-19T11:47:01.130Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:47:01.278Z [info]: Login button clicked
+2026-02-19T11:47:01.281Z [info]: LoginPage initialized
+2026-02-19T11:47:01.299Z [info]: Login successful - inventory container visible
+2026-02-19T11:47:01.300Z [info]: CommonPage initialized
+2026-02-19T11:47:01.304Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:48:26.453Z [info]: Starting test
+2026-02-19T11:48:26.457Z [info]: Starting test
+2026-02-19T11:48:26.510Z [info]: Starting test
+2026-02-19T11:48:27.084Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T11:48:27.168Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T11:48:27.300Z [info]: API check passed: site reachable
+2026-02-19T11:48:27.335Z [info]: API check passed: site reachable
+2026-02-19T11:48:27.337Z [info]: Starting test
+2026-02-19T11:48:27.388Z [info]: Starting test
+2026-02-19T11:48:29.666Z [info]: LoginPage initialized
+2026-02-19T11:48:29.667Z [info]: Performing login for user: standard_user
+2026-02-19T11:48:29.896Z [info]: Login button clicked
+2026-02-19T11:48:29.900Z [info]: InventoryPage initialized
+2026-02-19T11:48:29.926Z [info]: 6 inventory items loaded
+2026-02-19T11:48:29.929Z [info]: InventoryPage initialized
+2026-02-19T11:48:29.985Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T11:48:30.324Z [info]: CommonPage initialized
+2026-02-19T11:48:30.355Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:48:30.381Z [info]: CommonPage initialized
+2026-02-19T11:48:30.408Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:48:30.823Z [info]: LoginPage initialized
+2026-02-19T11:48:30.823Z [info]: Performing login for user: standard_user
+2026-02-19T11:48:30.866Z [info]: LoginPage initialized
+2026-02-19T11:48:30.866Z [info]: Performing login for user: visual_user
+2026-02-19T11:48:31.039Z [info]: Login button clicked
+2026-02-19T11:48:31.042Z [info]: LoginPage initialized
+2026-02-19T11:48:31.061Z [info]: Login successful - inventory container visible
+2026-02-19T11:48:31.062Z [info]: CommonPage initialized
+2026-02-19T11:48:31.067Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:48:31.135Z [info]: Login button clicked
+2026-02-19T11:48:31.140Z [info]: LoginPage initialized
+2026-02-19T11:48:31.159Z [info]: Login successful - inventory container visible
+2026-02-19T11:48:31.161Z [info]: CommonPage initialized
+2026-02-19T11:48:31.165Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:53:02.645Z [info]: Starting test
+2026-02-19T11:53:02.648Z [info]: Starting test
+2026-02-19T11:53:02.648Z [info]: Starting test
+2026-02-19T11:53:03.302Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T11:53:03.352Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T11:53:03.504Z [info]: API check passed: site reachable
+2026-02-19T11:53:03.543Z [info]: Starting test
+2026-02-19T11:53:03.572Z [info]: API check passed: site reachable
+2026-02-19T11:53:03.604Z [info]: Starting test
+2026-02-19T11:53:05.990Z [info]: LoginPage initialized
+2026-02-19T11:53:05.991Z [info]: Performing login for user: standard_user
+2026-02-19T11:53:06.228Z [info]: Login button clicked
+2026-02-19T11:53:06.230Z [info]: InventoryPage initialized
+2026-02-19T11:53:06.256Z [info]: 6 inventory items loaded
+2026-02-19T11:53:06.259Z [info]: InventoryPage initialized
+2026-02-19T11:53:06.319Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T11:53:06.612Z [info]: CommonPage initialized
+2026-02-19T11:53:06.635Z [info]: CommonPage initialized
+2026-02-19T11:53:06.645Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:53:06.673Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:53:06.810Z [info]: LoginPage initialized
+2026-02-19T11:53:06.811Z [info]: Performing login for user: visual_user
+2026-02-19T11:53:07.015Z [info]: Login button clicked
+2026-02-19T11:53:07.019Z [info]: LoginPage initialized
+2026-02-19T11:53:07.039Z [info]: Login successful - inventory container visible
+2026-02-19T11:53:07.040Z [info]: CommonPage initialized
+2026-02-19T11:53:07.044Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:53:07.178Z [info]: LoginPage initialized
+2026-02-19T11:53:07.179Z [info]: Performing login for user: standard_user
+2026-02-19T11:53:07.414Z [info]: Login button clicked
+2026-02-19T11:53:07.416Z [info]: LoginPage initialized
+2026-02-19T11:53:07.436Z [info]: Login successful - inventory container visible
+2026-02-19T11:53:07.437Z [info]: CommonPage initialized
+2026-02-19T11:53:07.442Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:56:27.836Z [info]: Starting test
+2026-02-19T11:56:27.999Z [info]: Starting test
+2026-02-19T11:56:28.004Z [info]: Starting test
+2026-02-19T11:56:28.373Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T11:56:29.040Z [info]: API check passed: site reachable
+2026-02-19T11:56:29.055Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T11:56:29.081Z [info]: Starting test
+2026-02-19T11:56:29.263Z [info]: API check passed: site reachable
+2026-02-19T11:56:29.312Z [info]: Starting test
+2026-02-19T11:56:31.819Z [info]: LoginPage initialized
+2026-02-19T11:56:31.820Z [info]: Performing login for user: standard_user
+2026-02-19T11:56:32.075Z [info]: Login button clicked
+2026-02-19T11:56:32.078Z [info]: InventoryPage initialized
+2026-02-19T11:56:32.105Z [info]: 6 inventory items loaded
+2026-02-19T11:56:32.109Z [info]: InventoryPage initialized
+2026-02-19T11:56:32.168Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T11:56:32.477Z [info]: CommonPage initialized
+2026-02-19T11:56:32.495Z [info]: CommonPage initialized
+2026-02-19T11:56:32.503Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:56:32.529Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:56:32.653Z [info]: LoginPage initialized
+2026-02-19T11:56:32.654Z [info]: Performing login for user: standard_user
+2026-02-19T11:56:32.861Z [info]: Login button clicked
+2026-02-19T11:56:32.864Z [info]: LoginPage initialized
+2026-02-19T11:56:32.882Z [info]: Login successful - inventory container visible
+2026-02-19T11:56:32.884Z [info]: CommonPage initialized
+2026-02-19T11:56:32.888Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:56:33.026Z [info]: LoginPage initialized
+2026-02-19T11:56:33.026Z [info]: Performing login for user: visual_user
+2026-02-19T11:56:33.250Z [info]: Login button clicked
+2026-02-19T11:56:33.252Z [info]: LoginPage initialized
+2026-02-19T11:56:33.274Z [info]: Login successful - inventory container visible
+2026-02-19T11:56:33.275Z [info]: CommonPage initialized
+2026-02-19T11:56:33.281Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:57:56.424Z [info]: Starting test
+2026-02-19T11:57:56.481Z [info]: Starting test
+2026-02-19T11:57:56.495Z [info]: Starting test
+2026-02-19T11:57:56.978Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T11:57:57.132Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T11:57:57.221Z [info]: API check passed: site reachable
+2026-02-19T11:57:57.274Z [info]: Starting test
+2026-02-19T11:57:57.320Z [info]: API check passed: site reachable
+2026-02-19T11:57:57.349Z [info]: Starting test
+2026-02-19T11:57:59.809Z [info]: LoginPage initialized
+2026-02-19T11:57:59.810Z [info]: Performing login for user: standard_user
+2026-02-19T11:58:00.065Z [info]: Login button clicked
+2026-02-19T11:58:00.072Z [info]: InventoryPage initialized
+2026-02-19T11:58:00.104Z [info]: 6 inventory items loaded
+2026-02-19T11:58:00.107Z [info]: InventoryPage initialized
+2026-02-19T11:58:00.170Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T11:58:00.365Z [info]: CommonPage initialized
+2026-02-19T11:58:00.399Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:58:00.436Z [info]: CommonPage initialized
+2026-02-19T11:58:00.473Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:58:00.907Z [info]: LoginPage initialized
+2026-02-19T11:58:00.907Z [info]: Performing login for user: visual_user
+2026-02-19T11:58:00.977Z [info]: LoginPage initialized
+2026-02-19T11:58:00.979Z [info]: Performing login for user: standard_user
+2026-02-19T11:58:01.142Z [info]: Login button clicked
+2026-02-19T11:58:01.145Z [info]: LoginPage initialized
+2026-02-19T11:58:01.166Z [info]: Login successful - inventory container visible
+2026-02-19T11:58:01.168Z [info]: CommonPage initialized
+2026-02-19T11:58:01.174Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:58:01.207Z [info]: Login button clicked
+2026-02-19T11:58:01.211Z [info]: LoginPage initialized
+2026-02-19T11:58:01.232Z [info]: Login successful - inventory container visible
+2026-02-19T11:58:01.233Z [info]: CommonPage initialized
+2026-02-19T11:58:01.238Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:58:56.899Z [info]: Starting test
+2026-02-19T11:58:57.026Z [info]: Starting test
+2026-02-19T11:58:57.101Z [info]: Starting test
+2026-02-19T11:58:57.417Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T11:58:57.584Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T11:58:57.706Z [info]: API check passed: site reachable
+2026-02-19T11:58:57.741Z [info]: API check passed: site reachable
+2026-02-19T11:58:57.819Z [info]: Starting test
+2026-02-19T11:58:57.829Z [info]: Starting test
+2026-02-19T11:59:00.641Z [info]: LoginPage initialized
+2026-02-19T11:59:00.642Z [info]: Performing login for user: standard_user
+2026-02-19T11:59:00.857Z [info]: Login button clicked
+2026-02-19T11:59:00.871Z [info]: CommonPage initialized
+2026-02-19T11:59:00.862Z [info]: InventoryPage initialized
+2026-02-19T11:59:00.896Z [info]: 6 inventory items loaded
+2026-02-19T11:59:00.899Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:59:00.900Z [info]: InventoryPage initialized
+2026-02-19T11:59:00.964Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T11:59:01.155Z [info]: CommonPage initialized
+2026-02-19T11:59:01.188Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:59:01.411Z [info]: LoginPage initialized
+2026-02-19T11:59:01.411Z [info]: Performing login for user: visual_user
+2026-02-19T11:59:01.599Z [info]: Login button clicked
+2026-02-19T11:59:01.601Z [info]: LoginPage initialized
+2026-02-19T11:59:01.621Z [info]: Login successful - inventory container visible
+2026-02-19T11:59:01.622Z [info]: CommonPage initialized
+2026-02-19T11:59:01.625Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T11:59:01.656Z [info]: LoginPage initialized
+2026-02-19T11:59:01.657Z [info]: Performing login for user: standard_user
+2026-02-19T11:59:01.852Z [info]: Login button clicked
+2026-02-19T11:59:01.855Z [info]: LoginPage initialized
+2026-02-19T11:59:01.872Z [info]: Login successful - inventory container visible
+2026-02-19T11:59:01.873Z [info]: CommonPage initialized
+2026-02-19T11:59:01.878Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T13:14:47.252Z [info]: Starting test
+2026-02-19T13:14:47.296Z [info]: Starting test
+2026-02-19T13:14:47.390Z [info]: Starting test
+2026-02-19T13:14:47.775Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T13:14:47.782Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T13:14:47.965Z [info]: API check passed: site reachable
+2026-02-19T13:14:47.959Z [info]: API check passed: site reachable
+2026-02-19T13:14:47.984Z [info]: Starting test
+2026-02-19T13:14:47.980Z [info]: Starting test
+2026-02-19T13:14:53.524Z [info]: CommonPage initialized
+2026-02-19T13:14:53.518Z [info]: CommonPage initialized
+2026-02-19T13:14:53.545Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T13:14:53.539Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T13:14:53.586Z [info]: LoginPage initialized
+2026-02-19T13:14:53.586Z [info]: Performing login for user: standard_user
+2026-02-19T13:14:53.780Z [info]: Login button clicked
+2026-02-19T13:14:53.782Z [info]: InventoryPage initialized
+2026-02-19T13:14:53.805Z [info]: 6 inventory items loaded
+2026-02-19T13:14:53.808Z [info]: InventoryPage initialized
+2026-02-19T13:14:53.871Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T13:14:53.987Z [info]: LoginPage initialized
+2026-02-19T13:14:53.988Z [info]: Performing login for user: standard_user
+2026-02-19T13:14:54.001Z [info]: LoginPage initialized
+2026-02-19T13:14:54.002Z [info]: Performing login for user: visual_user
+2026-02-19T13:14:54.206Z [info]: Login button clicked
+2026-02-19T13:14:54.208Z [info]: LoginPage initialized
+2026-02-19T13:14:54.232Z [info]: Login successful - inventory container visible
+2026-02-19T13:14:54.233Z [info]: CommonPage initialized
+2026-02-19T13:14:54.238Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T13:14:54.236Z [info]: Login button clicked
+2026-02-19T13:14:54.239Z [info]: LoginPage initialized
+2026-02-19T13:14:54.259Z [info]: Login successful - inventory container visible
+2026-02-19T13:14:54.261Z [info]: CommonPage initialized
+2026-02-19T13:14:54.266Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T13:15:28.334Z [info]: Starting test
+2026-02-19T13:15:28.334Z [info]: Starting test
+2026-02-19T13:15:28.393Z [info]: Starting test
+2026-02-19T13:15:28.795Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T13:15:28.810Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-19T13:15:28.937Z [info]: API check passed: site reachable
+2026-02-19T13:15:28.960Z [info]: Starting test
+2026-02-19T13:15:29.113Z [info]: API check passed: site reachable
+2026-02-19T13:15:29.216Z [info]: Starting test
+2026-02-19T13:15:32.002Z [info]: CommonPage initialized
+2026-02-19T13:15:32.029Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T13:15:32.161Z [info]: LoginPage initialized
+2026-02-19T13:15:32.162Z [info]: Performing login for user: standard_user
+2026-02-19T13:15:32.263Z [info]: CommonPage initialized
+2026-02-19T13:15:32.268Z [info]: LoginPage initialized
+2026-02-19T13:15:32.269Z [info]: Performing login for user: standard_user
+2026-02-19T13:15:32.295Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T13:15:32.432Z [info]: Login button clicked
+2026-02-19T13:15:32.435Z [info]: LoginPage initialized
+2026-02-19T13:15:32.467Z [info]: Login successful - inventory container visible
+2026-02-19T13:15:32.468Z [info]: CommonPage initialized
+2026-02-19T13:15:32.473Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0
+2026-02-19T13:15:32.594Z [info]: Login button clicked
+2026-02-19T13:15:32.597Z [info]: InventoryPage initialized
+2026-02-19T13:15:32.627Z [info]: 6 inventory items loaded
+2026-02-19T13:15:32.630Z [info]: InventoryPage initialized
+2026-02-19T13:15:32.695Z [info]: Added first item to cart and badge updated to 1
+2026-02-19T13:15:32.982Z [info]: LoginPage initialized
+2026-02-19T13:15:32.983Z [info]: Performing login for user: visual_user
+2026-02-19T13:15:33.179Z [info]: Login button clicked
+2026-02-19T13:15:33.182Z [info]: LoginPage initialized
+2026-02-19T13:15:33.230Z [info]: Login successful - inventory container visible
+2026-02-19T13:15:33.249Z [info]: CommonPage initialized
+2026-02-19T13:15:33.290Z [info]: Visual config -> pixelRatio: 0.001, pixels: 200, threshold: 0.1, maxSizeDiff: 0

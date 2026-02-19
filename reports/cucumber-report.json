@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 650158900
+              "duration": 461601000
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 563682600
+              "duration": 333730299
             }
           },
           {
@@ -35,7 +35,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 43305800
+              "duration": 76617100
             }
           }
         ],
@@ -75,7 +75,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 736955600
+              "duration": 448971399
             }
           },
           {
@@ -88,7 +88,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 270873900
+              "duration": 155484300
             }
           },
           {
@@ -96,7 +96,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 45737300
+              "duration": 19509799
             }
           }
         ],
@@ -168,7 +168,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 825616599
+              "duration": 1051049500
             }
           },
           {
@@ -181,7 +181,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2811181599
+              "duration": 2815713700
             }
           },
           {
@@ -190,11 +190,11 @@
             "line": 6,
             "name": "user performs UI login with standard_user credentials",
             "match": {
-              "location": "step-definitions\\ui\\uiSteps.ts:6"
+              "location": "step-definitions\\ui\\uiSteps.ts:13"
             },
             "result": {
               "status": "passed",
-              "duration": 265587599
+              "duration": 334258500
             }
           },
           {
@@ -203,11 +203,11 @@
             "line": 7,
             "name": "user sees inventory page loaded",
             "match": {
-              "location": "step-definitions\\ui\\uiSteps.ts:22"
+              "location": "step-definitions\\ui\\uiSteps.ts:48"
             },
             "result": {
               "status": "passed",
-              "duration": 34359000
+              "duration": 32906399
             }
           },
           {
@@ -216,11 +216,11 @@
             "line": 8,
             "name": "user adds first item to cart",
             "match": {
-              "location": "step-definitions\\ui\\uiSteps.ts:27"
+              "location": "step-definitions\\ui\\uiSteps.ts:53"
             },
             "result": {
               "status": "passed",
-              "duration": 79687599
+              "duration": 67731299
             }
           },
           {
@@ -228,7 +228,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 35272300
+              "duration": 23527700
             }
           }
         ],
@@ -292,7 +292,7 @@
         "description": "",
         "id": "ui-login-functionality;valid-user-login-through-ui-flow",
         "keyword": "Scenario Outline",
-        "line": 12,
+        "line": 13,
         "name": "Valid user login through UI flow",
         "steps": [
           {
@@ -300,7 +300,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 526348400
+              "duration": 480860100
             }
           },
           {
@@ -313,46 +313,59 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2551905800
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 6,
-            "name": "user performs UI login with standard_user credentials",
-            "match": {
-              "location": "step-definitions\\ui\\uiSteps.ts:6"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 326188100
+              "duration": 2557379699
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 7,
-            "name": "UI login should be successful",
+            "line": 6,
+            "name": "visual validation passes for login",
             "match": {
-              "location": "step-definitions\\ui\\uiSteps.ts:12"
+              "location": "step-definitions\\ui\\uiSteps.ts:31"
             },
             "result": {
               "status": "passed",
-              "duration": 44428399
+              "duration": 159654099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "user performs UI login with standard_user credentials",
+            "match": {
+              "location": "step-definitions\\ui\\uiSteps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 274328499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "UI login should be successful",
+            "match": {
+              "location": "step-definitions\\ui\\uiSteps.ts:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 33574300
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 8,
-            "name": "visual validation passes for login",
+            "line": 9,
+            "name": "visual validation passes for inventory",
             "match": {
-              "location": "step-definitions\\ui\\uiSteps.ts:17"
+              "location": "step-definitions\\ui\\uiSteps.ts:31"
             },
             "result": {
               "status": "passed",
-              "duration": 258589200
+              "duration": 304146600
             }
           },
           {
@@ -360,7 +373,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 24100199
+              "duration": 21151400
             }
           }
         ],
@@ -392,7 +405,7 @@
         "description": "",
         "id": "ui-login-functionality;valid-user-login-through-ui-flow",
         "keyword": "Scenario Outline",
-        "line": 13,
+        "line": 14,
         "name": "Valid user login through UI flow",
         "steps": [
           {
@@ -400,7 +413,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 730006800
+              "duration": 550293999
             }
           },
           {
@@ -413,46 +426,59 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3158385900
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 6,
-            "name": "user performs UI login with visual_user credentials",
-            "match": {
-              "location": "step-definitions\\ui\\uiSteps.ts:6"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 274647300
+              "duration": 2492124600
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 7,
-            "name": "UI login should be successful",
+            "line": 6,
+            "name": "visual validation passes for login",
             "match": {
-              "location": "step-definitions\\ui\\uiSteps.ts:12"
+              "location": "step-definitions\\ui\\uiSteps.ts:31"
             },
             "result": {
               "status": "passed",
-              "duration": 39229400
+              "duration": 719385000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "user performs UI login with visual_user credentials",
+            "match": {
+              "location": "step-definitions\\ui\\uiSteps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 200890199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "UI login should be successful",
+            "match": {
+              "location": "step-definitions\\ui\\uiSteps.ts:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 67628099
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 8,
-            "name": "visual validation passes for login",
+            "line": 9,
+            "name": "visual validation passes for inventory",
             "match": {
-              "location": "step-definitions\\ui\\uiSteps.ts:17"
+              "location": "step-definitions\\ui\\uiSteps.ts:31"
             },
             "result": {
               "status": "passed",
-              "duration": 285453899
+              "duration": 346017100
             }
           },
           {
@@ -460,7 +486,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 30134799
+              "duration": 18574599
             }
           }
         ],

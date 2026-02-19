@@ -1,25 +1,28 @@
-import { World, IWorldOptions } from '@cucumber/cucumber';
-import { Page, BrowserContext, APIRequestContext } from '@playwright/test';
+// fixtures/world.ts
+import { World, IWorldOptions, ITestCaseHookParameter } from '@cucumber/cucumber';
+import type { Page, BrowserContext, APIRequestContext } from '@playwright/test';
+
 import logger from '../utils/logger';
 import { testUsers } from '../utils/testData';
 
-export type TestData = {
-  testUsers: typeof testUsers;
-};
-
 export class CustomWorld extends World {
-  page?: Page;
-  context?: BrowserContext;
-  apiContext?: APIRequestContext;
+  public page?: Page;
+  public context?: BrowserContext;
+  public apiContext?: APIRequestContext;
 
-  testData: TestData;
-  logger = logger;
+  // Test data container (same as you had)
+  public testData = { testUsers };
 
-  // Add this
-  scenarioName: string = 'unknown';
+  // Logger instance (same as you had)
+  public logger = logger;
+
+  // Scenario metadata (used by hooks)
+  public pickle!: ITestCaseHookParameter['pickle'];
+
+  // Used for visual baseline naming
+  public currentUserName?: string;
 
   constructor(options: IWorldOptions) {
     super(options);
-    this.testData = { testUsers };
   }
 }
