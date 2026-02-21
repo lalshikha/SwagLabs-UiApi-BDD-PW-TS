@@ -3,6 +3,7 @@
     requireModule: ['ts-node/register'],
 
     require: [
+      'fixtures/**/*.ts',
       'hooks/*.ts',
       'step-definitions/**/*.ts'
     ],

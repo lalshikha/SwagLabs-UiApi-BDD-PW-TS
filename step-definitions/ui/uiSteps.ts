@@ -1,13 +1,13 @@
 import { Then } from '@cucumber/cucumber';
-import { CustomWorld } from '../../fixtures/world';
+import { Fixtures } from '../../fixtures/Fixtures';
 import CommonPage from '../../pages/CommonPage';
 
-Then('visual validation passes for {word} element', async function (this: CustomWorld, elementName: string) {
+Then('visual validation passes for {word} element', async function (this: Fixtures, elementName: string) {
   const commonPage = new CommonPage(this.page!);
   await commonPage.assertVisualElement(elementName);
 });
 
-Then('visual validation passes for {word} page', async function (this: CustomWorld, pageName: string) {
+Then('visual validation passes for {word} page', async function (this: Fixtures, pageName: string) {
   const commonPage = new CommonPage(this.page!);
   await commonPage.assertVisualPage(pageName);
 });
