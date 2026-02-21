@@ -1,21 +1,45 @@
-import { setWorldConstructor, World, type IWorldOptions } from '@cucumber/cucumber';
-import type { Browser, BrowserContext, Page, APIRequestContext } from '@playwright/test';
-import logger from '../utils/logger';
+// fixtures/Fixtures.ts
+import { test as base, createBdd } from 'playwright-bdd';
+import { request, type APIRequestContext } from '@playwright/test';
 
-export class Fixtures extends World {
-  // shared utils
-  logger = logger;
-  scenarioName?: string;
+import LoginPage from '../pages/LoginPage';
+import InventoryPage from '../pages/InventoryPage';
+import CommonPage from '../pages/CommonPage';
+import ApiService from '../services/ApiService';
 
-  browser?: Browser;
-  context?: BrowserContext;
-  page?: Page;
+export type AppFixtures = {
+  loginPage: LoginPage;
+  inventoryPage: InventoryPage;
+  commonPage: CommonPage;
 
-  apiContext?: APIRequestContext;
+  apiContext: APIRequestContext;
+  apiService: ApiService;
+};
 
-  constructor(options: IWorldOptions) {
-    super(options);
-  }
-}
+export const test = base.extend<AppFixtures>({
+  loginPage: async ({ page }, use) => {
+    await use(new LoginPage(page));
+  },
 
-setWorldConstructor(Fixtures);
+  inventoryPage: async ({ page }, use) => {
+    await use(new InventoryPage(page));
+  },
+
+  commonPage: async ({ page }, use) => {
+    await use(new CommonPage(page));
+  },
+
+  apiContext: async ({}, use) => {
+    const ctx = await request.newContext({
+      baseURL: process.env.API_BASE_URL || process.env.APP_URL,
+    });
+    await use(ctx);
+    await ctx.dispose();
+  },
+
+  apiService: async ({ apiContext }, use) => {
+    await use(new ApiService(apiContext));
+  },
+});
+
+export const { Given, When, Then } = createBdd(test);

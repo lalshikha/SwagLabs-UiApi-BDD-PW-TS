@@ -1,0 +1,38 @@
+<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="12.786634999999999">
+<testsuite name="features\functional\login.feature.spec.js" timestamp="2026-02-21T07:55:51.735Z" hostname="chromium" tests="2" failures="0" skipped="0" time="0.819" errors="0">
+<testcase name="Functional API Login Validation › API backend validates login credentials › Example #1" classname="features\functional\login.feature.spec.js" time="0.346">
+<system-out>
+<![CDATA[2026-02-21T07:55:56.897Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-21T07:55:57.128Z [info]: API check passed: site reachable
+]]>
+</system-out>
+</testcase>
+<testcase name="Functional API Login Validation › API backend validates login credentials › Example #2" classname="features\functional\login.feature.spec.js" time="0.473">
+<system-out>
+<![CDATA[2026-02-21T07:55:57.094Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-21T07:55:57.422Z [info]: API check passed: site reachable
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="features\ui\login.feature.spec.js" timestamp="2026-02-21T07:55:51.735Z" hostname="chromium" tests="2" failures="0" skipped="0" time="13.648" errors="0">
+<testcase name="UI Login Functionality › Valid user login through UI flow › Example #1" classname="features\ui\login.feature.spec.js" time="6.956">
+<system-out>
+<![CDATA[2026-02-21T07:55:57.512Z [info]: CommonPage initialized
+2026-02-21T07:55:57.521Z [info]: LoginPage initialized
+2026-02-21T07:56:03.535Z [info]: Performing login for user: standard_user
+2026-02-21T07:56:03.810Z [info]: Login successful - inventory container visible
+]]>
+</system-out>
+</testcase>
+<testcase name="UI Login Functionality › Valid user login through UI flow › Example #2" classname="features\ui\login.feature.spec.js" time="6.692">
+<system-out>
+<![CDATA[2026-02-21T07:55:57.524Z [info]: CommonPage initialized
+2026-02-21T07:55:57.532Z [info]: LoginPage initialized
+2026-02-21T07:56:03.463Z [info]: Performing login for user: visual_user
+2026-02-21T07:56:03.729Z [info]: Login successful - inventory container visible
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

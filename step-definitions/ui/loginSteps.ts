@@ -1,12 +1,9 @@
-import { When, Then } from '@cucumber/cucumber';
-import LoginPage from '../../pages/LoginPage';
+import { When, Then } from '../../fixtures/Fixtures';
 
-When('user performs UI login with {word} credentials', async function (userType: string) {
-  const loginPage = new LoginPage(this.page);
+When('user performs UI login with {word} credentials', async ({ loginPage }, userType: string) => {
   await loginPage.loginAs(userType);
 });
 
-Then('UI login should be successful', async function () {
-  const loginPage = new LoginPage(this.page);
+Then('UI login should be successful', async ({ loginPage }) => {
   await loginPage.assertLoginSuccess();
 });
