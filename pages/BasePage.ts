@@ -1,6 +1,11 @@
 import { Page, Locator } from '@playwright/test';
 import logger from '../utils/logger';
 import { compareWithBaseline, VisualCompareOptions } from '../utils/visualCompare';
+import { L, type LocatorKey } from '../src/config/config_locators';
+
+
+type PageShotOptions = Parameters<Page['screenshot']>[0];
+type LocatorShotOptions = Parameters<Locator['screenshot']>[0];
 
 export default abstract class BasePage {
   protected readonly page: Page;
@@ -8,48 +13,86 @@ export default abstract class BasePage {
 
   constructor(page: Page) {
     this.page = page;
-    this.logger.info(this.constructor.name + ' initialized');
+    this.logger.info(`${this.constructor.name} initialized`);
   }
 
+  // Your AUT uses data-test="..."
   protected getByDataTest(value: string): Locator {
-    return this.page.locator('[data-test="' + value + '"]');
+    return this.page.locator(`[data-test="${value}"]`);
   }
 
-  async assertVisualSnapshot(snapshotFileName: string, opts: VisualCompareOptions): Promise<void> {
-    // Disable animations once per page (stabilizes diffs) [web:323]
-    const anyPage = this.page as any;
-    if (!anyPage.__visualStabilized) {
-      await this.page.addStyleTag({
-        content: `*,*::before,*::after{
-        animation-duration:1ms !important;
-        transition-duration:0s !important;
-        caret-color: transparent !important;
-      }`
-      });
-      anyPage.__visualStabilized = true;
-    }
+  /**
+   * Central accessor: pass a key from config_locators (Option B).
+   * Default behavior: treat mapped value as data-test attribute value.
+   *
+   * If later you want to support non-data-test selectors, you can add a convention like:
+   * L.someKey = 'css:button:has-text("Add to cart")'
+   */
+  protected getByKey(key: LocatorKey): Locator {
+    const raw = L[key];
 
-    await this.page.waitForLoadState('domcontentloaded');
-    await this.page.waitForLoadState('networkidle');
+    // Optional extension point:
+    if (raw.startsWith('css:')) return this.page.locator(raw.replace(/^css:/, ''));
 
-    this.logger.info(
-      'Visual config -> pixelRatio: ' +
-      opts.maxDiffPixelRatio +
-      ', pixels: ' +
-      opts.maxDiffPixels +
-      ', threshold: ' +
-      opts.threshold +
-      ', maxSizeDiff: ' +
-      opts.maxSizeDiffPixels
-    );
-
-    const buffer = await this.page.screenshot({ fullPage: true });
-    await compareWithBaseline({
-      screenshotBuffer: buffer,
-      snapshotFileName,
-      options: opts,
-    });
+    return this.getByDataTest(raw);
   }
 
+  protected visualDefaults(): VisualCompareOptions {
+    return {
+      threshold: 0.1,
+      maxDiffPixels: -1, // disabled (ratio-only)
+      maxDiffPixelRatio: 0.001,
+      maxSizeDiffPixels: 0,
+      includeAA: false,
+      alpha: 0.1,
+    };
+  }
+
+  async assertPageScreenshot(
+    snapshotFileName: string,
+    visualOpts?: VisualCompareOptions,
+    shotOpts?: PageShotOptions
+  ): Promise<void> {
+    const options: VisualCompareOptions = {
+      ...this.visualDefaults(),
+      ...(visualOpts ?? {}),
+      maxDiffPixels: -1,
+    };
+
+    const screenshotOptions: PageShotOptions = {
+      fullPage: true,
+      animations: 'disabled',
+      caret: 'hide',
+      scale: 'css',
+      ...shotOpts,
+    };
+
+    const buffer = await this.page.screenshot(screenshotOptions);
+    await compareWithBaseline({ screenshotBuffer: buffer, snapshotFileName, options });
+  }
+
+  async assertElementScreenshot(
+    element: Locator,
+    snapshotFileName: string,
+    visualOpts?: VisualCompareOptions,
+    shotOpts?: LocatorShotOptions
+  ): Promise<void> {
+    const options: VisualCompareOptions = {
+      ...this.visualDefaults(),
+      ...(visualOpts ?? {}),
+      maxDiffPixels: -1,
+    };
+
+    await element.waitFor({ state: 'visible' });
+
+    const screenshotOptions: LocatorShotOptions = {
+      animations: 'disabled',
+      caret: 'hide',
+      scale: 'css',
+      ...shotOpts,
+    };
+
+    const buffer = await element.screenshot(screenshotOptions);
+    await compareWithBaseline({ screenshotBuffer: buffer, snapshotFileName, options });
+  }
 }
-

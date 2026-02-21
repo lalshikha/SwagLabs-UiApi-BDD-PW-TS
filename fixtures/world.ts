@@ -1,10 +1,10 @@
-// fixtures/world.ts
+// World/world.ts
 // In Cucumber, “World” is the name of the per-scenario state container that Cucumber exposes 
 // to your step definitions as this. Cucumber’s docs literally call it World: an isolated 
 // scope created new for each scenario, where you can set something in one step and read it 
 // in later steps, and it’s discarded after the scenario ends.
 
-// Your fixtures/world.ts defines a CustomWorld class that extends Cucumber’s built-in w
+// Your world/world.ts defines a CustomWorld class that extends Cucumber’s built-in w
 // orld, so Cucumber will instantiate it for every scenario and pass it as this into steps/hooks.
 
 // That’s why we store things like:

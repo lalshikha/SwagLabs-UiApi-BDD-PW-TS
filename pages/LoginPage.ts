@@ -1,49 +1,71 @@
 import { Locator, expect } from '@playwright/test';
 import BasePage from './BasePage';
+import { testUsers, saucedemoUrl } from '../utils/testData';
+import { L, type LocatorKey } from '../src/config/config_locators';
 
-export class LoginLocators {
-  // SauceDemo uses data-test="username", "password", "login-button", "error"
-  readonly username = 'username';
-  readonly password = 'password';
-  readonly loginButton = 'login-button';
-  readonly error = 'error';
-}
+type LoginVisualKey = 'username' | 'password' | 'loginbutton';
 
 export default class LoginPage extends BasePage {
-  private readonly loc = new LoginLocators();
-
   private get usernameInput(): Locator {
-    return this.getByDataTest(this.loc.username);
+    return this.getByKey('login_username');
   }
 
   private get passwordInput(): Locator {
-    return this.getByDataTest(this.loc.password);
+    return this.getByKey('login_password');
   }
 
   private get loginBtn(): Locator {
-    return this.getByDataTest(this.loc.loginButton);
+    return this.getByKey('login_loginButton');
   }
 
   private get errorBanner(): Locator {
-    return this.getByDataTest(this.loc.error);
+    return this.getByKey('login_error');
+  }
+
+  async open(): Promise<void> {
+    await this.page.goto(process.env.APP_URL ?? saucedemoUrl, { waitUntil: 'domcontentloaded' });
+    this.logger.info('Opened saucedemo');
   }
 
   async login(username: string, password: string): Promise<void> {
-    this.logger.info('Performing login for user: ' + username);
+    this.logger.info(`Performing login for user: ${username}`);
     await this.usernameInput.fill(username);
     await this.passwordInput.fill(password);
     await this.loginBtn.click();
-    this.logger.info('Login button clicked');
+  }
+
+  async loginAs(userType: string): Promise<void> {
+    const user = testUsers[userType];
+    if (!user) throw new Error(`Unknown userType "${userType}" in testUsers`);
+    await this.login(user.username, user.password);
   }
 
   async assertLoginSuccess(): Promise<void> {
-    // inventory page container (SauceDemo)
-    await expect(this.page.locator('[data-test="inventory-container"]')).toBeVisible();
+    await expect(this.getByKey('inventory_container')).toBeVisible();
     this.logger.info('Login successful - inventory container visible');
   }
 
   async assertLoginErrorVisible(): Promise<void> {
     await expect(this.errorBanner).toBeVisible();
     this.logger.info('Login error banner visible');
+  }
+
+  /**
+   * Only the keys you want to expose to feature files.
+   * Step passes: username | password | loginbutton
+   */
+  getVisualElement(elementKey: string): Locator {
+    const k = elementKey.trim().toLowerCase() as LoginVisualKey;
+
+    switch (k) {
+      case 'username':
+        return this.usernameInput;
+      case 'password':
+        return this.passwordInput;
+      case 'loginbutton':
+        return this.loginBtn;
+      default:
+        throw new Error(`Unknown login elementKey "${elementKey}" (use: username|password|loginbutton)`);
+    }
   }
 }

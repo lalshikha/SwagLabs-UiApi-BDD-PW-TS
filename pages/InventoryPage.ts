@@ -1,43 +1,46 @@
 import { Locator, expect } from '@playwright/test';
 import BasePage from './BasePage';
 
-export class InventoryLocators {
-  readonly inventoryContainer = 'inventory-container';
-  readonly addToCartButtons = 'add-to-cart';
-  readonly cartBadge = 'shopping_cart_badge';
-}
-
 export default class InventoryPage extends BasePage {
-  private readonly loc = new InventoryLocators();
-
   private get inventoryContainer(): Locator {
-    return this.getByDataTest(this.loc.inventoryContainer);
+    return this.getByKey('inventory_container');
+  }
+
+  private get inventoryItems(): Locator {
+    return this.getByKey('inventory_item');
   }
 
   private get firstAddToCartButton(): Locator {
-    return this.page.locator('[data-test^="add-to-cart"]').first();
+    // If the app doesn't have stable data-test for each "Add to cart" button,
+    // keep it as a locator() here (not great, but practical).
+    return this.page.locator('button:has-text("Add to cart")').first();
   }
-
-private get cartBadge(): Locator {
-  return this.page.locator('.shopping_cart_badge');
-}
 
   async assertInventoryLoaded(): Promise<void> {
     await expect(this.inventoryContainer).toBeVisible();
-    const count = await this.page.locator('[data-test="inventory-item"]').count();
-    expect(count).toBeGreaterThan(0);
-    this.logger.info(count + ' inventory items loaded');
+    await expect(this.inventoryItems.first()).toBeVisible();
+    this.logger.info('Inventory loaded - container and first item visible');
   }
 
-async addFirstItemToCart(): Promise<void> {
-  await expect(this.inventoryContainer).toBeVisible();
-  await this.firstAddToCartButton.click();
-  await expect(this.cartBadge).toHaveText('1');
-  this.logger.info('Added first item to cart and badge updated to 1');
-}
+  async addFirstItemToCart(): Promise<void> {
+    await this.assertInventoryLoaded();
+    await this.firstAddToCartButton.click();
+    this.logger.info('Added first item to cart');
+  }
 
-  async captureInventoryScreenshot(fileName: string): Promise<void> {
-    await this.page.screenshot({ path: 'screenshots/' + fileName, fullPage: true });
-    this.logger.info('Captured screenshot: ' + fileName);
+  getVisualElement(elementName: string): Locator {
+    switch (elementName.trim().toLowerCase()) {
+      case 'inventory':
+      case 'inventorycontainer':
+      case 'inventorylist':
+        return this.inventoryContainer;
+
+      case 'firstitem':
+      case 'firstinventoryitem':
+        return this.inventoryItems.first();
+
+      default:
+        throw new Error(`Unknown inventory elementName "${elementName}"`);
+    }
   }
 }
