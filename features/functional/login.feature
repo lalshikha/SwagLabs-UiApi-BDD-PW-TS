@@ -1,6 +1,7 @@
-﻿@regression @functional @api @TCId-002 @login
+﻿@regression @functional @api @login
 Feature: Functional API Login Validation
 
+  @TCId-008
   Scenario Outline: API backend validates login credentials
     Given API service validates <user> login
 

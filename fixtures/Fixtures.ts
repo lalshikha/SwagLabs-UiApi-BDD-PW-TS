@@ -30,9 +30,12 @@ export const test = base.extend<AppFixtures>({
   },
 
   apiContext: async ({}, use) => {
-    const ctx = await request.newContext({
-      baseURL: process.env.API_BASE_URL || process.env.APP_URL,
-    });
+    const baseURL =
+      process.env.API_BASE_URL ??
+      process.env.APP_URL ??
+      'https://www.saucedemo.com/';
+
+    const ctx = await request.newContext({ baseURL });
     await use(ctx);
     await ctx.dispose();
   },

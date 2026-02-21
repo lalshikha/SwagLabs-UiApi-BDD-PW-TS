@@ -1,36 +1,79 @@
-<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="12.857911">
-<testsuite name="features\functional\login.feature.spec.js" timestamp="2026-02-21T08:12:02.949Z" hostname="chromium" tests="2" failures="0" skipped="0" time="0.868" errors="0">
-<testcase name="Functional API Login Validation › API backend validates login credentials › Example #1" classname="features\functional\login.feature.spec.js" time="0.438">
+<testsuites id="" name="" tests="10" failures="0" skipped="0" errors="0" time="17.151088000000005">
+<testsuite name="features\functional\login.feature.spec.js" timestamp="2026-02-21T10:43:54.446Z" hostname="chromium" tests="2" failures="0" skipped="0" time="0.837" errors="0">
+<testcase name="Functional API Login Validation › API backend validates login credentials › Example #1" classname="features\functional\login.feature.spec.js" time="0.404">
 <system-out>
-<![CDATA[2026-02-21T08:12:08.124Z [info]: API check: GET https://www.saucedemo.com/
-2026-02-21T08:12:08.399Z [info]: API check passed: site reachable
+<![CDATA[2026-02-21T10:44:02.694Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-21T10:44:02.971Z [info]: API check passed: site reachable
 ]]>
 </system-out>
 </testcase>
-<testcase name="Functional API Login Validation › API backend validates login credentials › Example #2" classname="features\functional\login.feature.spec.js" time="0.43">
+<testcase name="Functional API Login Validation › API backend validates login credentials › Example #2" classname="features\functional\login.feature.spec.js" time="0.433">
 <system-out>
-<![CDATA[2026-02-21T08:12:07.920Z [info]: API check: GET https://www.saucedemo.com/
-2026-02-21T08:12:08.193Z [info]: API check passed: site reachable
+<![CDATA[2026-02-21T10:44:02.728Z [info]: API check: GET https://www.saucedemo.com/
+2026-02-21T10:44:02.953Z [info]: API check passed: site reachable
 ]]>
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="features\ui\login.feature.spec.js" timestamp="2026-02-21T08:12:02.949Z" hostname="chromium" tests="2" failures="0" skipped="0" time="13.8" errors="0">
-<testcase name="UI Login Functionality › Valid user login through UI flow › Example #1" classname="features\ui\login.feature.spec.js" time="6.95">
+<testsuite name="features\ui\login.feature.spec.js" timestamp="2026-02-21T10:43:54.446Z" hostname="chromium" tests="8" failures="0" skipped="0" time="29.236" errors="0">
+<testcase name="UI Login Functionality › Valid user login through UI flow › Example #1" classname="features\ui\login.feature.spec.js" time="4.389">
 <system-out>
-<![CDATA[2026-02-21T08:12:08.747Z [info]: CommonPage initialized
-2026-02-21T08:12:08.756Z [info]: LoginPage initialized
-2026-02-21T08:12:14.831Z [info]: Performing login for user: standard_user
-2026-02-21T08:12:15.075Z [info]: Login successful - inventory container visible
+<![CDATA[2026-02-21T10:44:03.309Z [info]: CommonPage initialized
+2026-02-21T10:44:03.314Z [info]: LoginPage initialized
+2026-02-21T10:44:06.971Z [info]: Performing login for user: standard_user
+2026-02-21T10:44:07.289Z [info]: Login successful - inventory container visible
 ]]>
 </system-out>
 </testcase>
-<testcase name="UI Login Functionality › Valid user login through UI flow › Example #2" classname="features\ui\login.feature.spec.js" time="6.85">
+<testcase name="UI Login Functionality › Valid user login through UI flow › Example #2" classname="features\ui\login.feature.spec.js" time="4.563">
 <system-out>
-<![CDATA[2026-02-21T08:12:08.631Z [info]: CommonPage initialized
-2026-02-21T08:12:08.639Z [info]: LoginPage initialized
-2026-02-21T08:12:14.776Z [info]: Performing login for user: visual_user
-2026-02-21T08:12:15.019Z [info]: Login successful - inventory container visible
+<![CDATA[2026-02-21T10:44:03.380Z [info]: CommonPage initialized
+2026-02-21T10:44:03.385Z [info]: LoginPage initialized
+2026-02-21T10:44:07.036Z [info]: Performing login for user: visual_user
+2026-02-21T10:44:07.316Z [info]: Login successful - inventory container visible
+]]>
+</system-out>
+</testcase>
+<testcase name="UI Login Functionality › Login should fail when username is blank" classname="features\ui\login.feature.spec.js" time="3.285">
+<system-out>
+<![CDATA[2026-02-21T10:44:03.845Z [info]: LoginPage initialized
+2026-02-21T10:44:06.580Z [info]: Login error validated: Epic sadface: Username is required
+]]>
+</system-out>
+</testcase>
+<testcase name="UI Login Functionality › Login should fail when password is blank" classname="features\ui\login.feature.spec.js" time="3.655">
+<system-out>
+<![CDATA[2026-02-21T10:44:03.899Z [info]: LoginPage initialized
+2026-02-21T10:44:07.089Z [info]: Login error validated: Epic sadface: Password is required
+]]>
+</system-out>
+</testcase>
+<testcase name="UI Login Functionality › Login should fail when both username and password are blank" classname="features\ui\login.feature.spec.js" time="3.583">
+<system-out>
+<![CDATA[2026-02-21T10:44:07.160Z [info]: LoginPage initialized
+2026-02-21T10:44:10.273Z [info]: Login error validated: Epic sadface: Username is required
+]]>
+</system-out>
+</testcase>
+<testcase name="UI Login Functionality › Login should fail for invalid username" classname="features\ui\login.feature.spec.js" time="3.133">
+<system-out>
+<![CDATA[2026-02-21T10:44:07.547Z [info]: LoginPage initialized
+2026-02-21T10:44:10.354Z [info]: Login error validated: Epic sadface: Username and password do not match any user in this service
+]]>
+</system-out>
+</testcase>
+<testcase name="UI Login Functionality › Login should fail for invalid password" classname="features\ui\login.feature.spec.js" time="3.466">
+<system-out>
+<![CDATA[2026-02-21T10:44:07.682Z [info]: LoginPage initialized
+2026-02-21T10:44:10.833Z [info]: Login error validated: Epic sadface: Username and password do not match any user in this service
+]]>
+</system-out>
+</testcase>
+<testcase name="UI Login Functionality › Login should fail for locked out user" classname="features\ui\login.feature.spec.js" time="3.162">
+<system-out>
+<![CDATA[2026-02-21T10:44:07.771Z [info]: LoginPage initialized
+2026-02-21T10:44:10.222Z [info]: Performing login for user: locked_out_user
+2026-02-21T10:44:10.553Z [info]: Login error validated: Epic sadface: Sorry, this user has been locked out.
 ]]>
 </system-out>
 </testcase>

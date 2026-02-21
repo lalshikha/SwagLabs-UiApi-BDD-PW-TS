@@ -1,7 +1,6 @@
 import { Locator, expect } from '@playwright/test';
 import BasePage from './BasePage';
 import { testUsers, saucedemoUrl } from '../utils/testData';
-import { L, type LocatorKey } from '../src/config/config_locators';
 
 type LoginVisualKey = 'username' | 'password' | 'loginbutton';
 
@@ -49,6 +48,13 @@ export default class LoginPage extends BasePage {
     await expect(this.errorBanner).toBeVisible();
     this.logger.info('Login error banner visible');
   }
+
+  async assertLoginErrorText(expected: string): Promise<void> {
+    await expect(this.errorBanner).toBeVisible();
+    await expect(this.errorBanner).toHaveText(expected);
+    this.logger.info(`Login error validated: ${expected}`);
+  }
+
 
   /**
    * Only the keys you want to expose to feature files.

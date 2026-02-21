@@ -12,3 +12,4 @@ reports/cucumber-report.json
 screenshots/visual/actual/
 screenshots/visual/diff/
 screenshots/test.png
+env/*.env

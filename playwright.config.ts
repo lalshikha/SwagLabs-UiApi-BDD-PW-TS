@@ -1,21 +1,22 @@
+// playwright.config.ts
+import * as dotenv from 'dotenv';
+import path from 'path';
 import { defineConfig, devices } from '@playwright/test';
 import { defineBddConfig } from 'playwright-bdd';
 
+// Load env as early as possible (before any imports rely on process.env)
+const ENV = process.env.ENV ?? 'dev';
+const envFile = path.resolve(process.cwd(), 'env', `${ENV}.env`);
+dotenv.config({ path: envFile });
+console.log(`Loaded environment variables from ${envFile}`);
+
 const testDir = defineBddConfig({
-  // Where your .feature files live (based on your screenshot)
   paths: ['features/**/*.feature'],
-
-  // Where your step-definition files live
-  require: ['step-definitions/**/*.ts'],
-
-  // IMPORTANT: this is your central fixtures file that exports { test, Given, When, Then }
-  importTestFrom: './fixtures/Fixtures',
-  // optional:
-  // outputDir: '.features-gen' // you can set it; otherwise default is used
+  require: ['fixtures/**/*.ts', 'step-definitions/**/*.ts'],
 });
 
 export default defineConfig({
-  testDir, // <- generated bdd tests dir from .feature files
+  testDir,
   timeout: 60 * 1000,
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
@@ -23,7 +24,9 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: [['html'], ['junit', { outputFile: 'reports/junit-results.xml' }]],
   use: {
-    baseURL: 'https://www.saucedemo.com/',
+    // Prefer env-driven URL; fall back to saucedemo default
+    baseURL: process.env.APP_URL ?? 'https://www.saucedemo.com/',
+
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     actionTimeout: 60 * 1000,
