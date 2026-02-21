@@ -1,6 +1,8 @@
 // fixtures/Fixtures.ts
 import { test as base, createBdd } from 'playwright-bdd';
-import { request, type APIRequestContext } from '@playwright/test';
+import { request, type APIRequestContext, type TestInfo } from '@playwright/test';
+import fs from 'fs';
+import path from 'path';
 
 import LoginPage from '../pages/LoginPage';
 import InventoryPage from '../pages/InventoryPage';
@@ -14,9 +16,76 @@ export type AppFixtures = {
 
   apiContext: APIRequestContext;
   apiService: ApiService;
+
+  resolveTestData: (value: string, testInfo: TestInfo) => any;
 };
 
+function getTcIdFromTags(tags: string[]): string {
+  const tag = tags.find((t) => t.startsWith('@TCId-'));
+  if (!tag) throw new Error(`Missing @TCId-xxx tag. Current tags: ${tags.join(', ')}`);
+  return tag.substring(1); // "TCId-001"
+}
+
+/**
+ * In playwright-bdd, tests are generated into ".features-gen/.../<feature>.feature.spec.(js|ts)".
+ * testInfo.file points to that generated spec file.
+ * We want base "login" from "login.feature.spec.js".
+ */
+function getFeatureBaseNameFromGeneratedSpec(testInfo: TestInfo): string {
+  const file = testInfo.file; // absolute path to generated spec file [web:557]
+  const specName = path.basename(file); // e.g. "login.feature.spec.js"
+
+  // remove ".spec.js" or ".spec.ts"
+  const withoutSpecExt = specName.replace(/\.spec\.(js|ts)$/i, ''); // "login.feature"
+
+  // remove ".feature" if present
+  const withoutFeatureExt = withoutSpecExt.replace(/\.feature$/i, ''); // "login"
+
+  if (!withoutFeatureExt || withoutFeatureExt === specName) {
+    throw new Error(`Cannot derive feature name from testInfo.file="${file}"`);
+  }
+
+  return withoutFeatureExt;
+}
+
+function loadFeatureJson(env: string, featureBaseName: string): Record<string, any> {
+  const filePath = path.resolve(process.cwd(), 'test-data', env, `${featureBaseName}.json`);
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`Test-data file not found: ${filePath}`);
+  }
+  return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+}
+
 export const test = base.extend<AppFixtures>({
+  resolveTestData: async ({}, use) => {
+    const cache = new Map<string, Record<string, any>>();
+
+    const resolver = (value: string, testInfo: TestInfo) => {
+      if (typeof value !== 'string') return value;
+      if (!value.startsWith('testdata.')) return value;
+
+      const env = process.env.ENV ?? 'dev';
+      const tcId = getTcIdFromTags(testInfo.tags ?? []);
+      const feature = getFeatureBaseNameFromGeneratedSpec(testInfo); // ✅ login / inventory / etc
+
+      const cacheKey = `${env}::${feature}`;
+      const json = cache.get(cacheKey) ?? loadFeatureJson(env, feature);
+      cache.set(cacheKey, json);
+
+      const key = value.replace('testdata.', '');
+      const row = json[tcId];
+      if (!row) throw new Error(`No data for ${tcId} in ${feature}.json (env=${env})`);
+
+      if (!(key in row)) {
+        throw new Error(`Key "${key}" missing for ${tcId} in ${feature}.json (env=${env})`);
+      }
+
+      return row[key];
+    };
+
+    await use(resolver);
+  },
+
   loginPage: async ({ page }, use) => {
     await use(new LoginPage(page));
   },
@@ -30,11 +99,7 @@ export const test = base.extend<AppFixtures>({
   },
 
   apiContext: async ({}, use) => {
-    const baseURL =
-      process.env.API_BASE_URL ??
-      process.env.APP_URL ??
-      'https://www.saucedemo.com/';
-
+    const baseURL = process.env.API_BASE_URL ?? process.env.APP_URL ?? 'https://www.saucedemo.com/';
     const ctx = await request.newContext({ baseURL });
     await use(ctx);
     await ctx.dispose();

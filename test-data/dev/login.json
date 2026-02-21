@@ -1,0 +1,12 @@
+{
+  "TCId-001": {
+    "user1": "standard_user",
+    "user2": "visual_user",
+    "password": "secret_sauce"
+  },
+  "TCId-005": {
+    "username": "wrong_user",
+    "password": "secret_sauce",
+    "error": "Epic sadface: Username and password do not match any user in this service"
+  }
+}
