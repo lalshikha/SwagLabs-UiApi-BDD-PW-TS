@@ -17,7 +17,21 @@ export type AppFixtures = {
   apiContext: APIRequestContext;
   apiService: ApiService;
 
+  /**
+   * Low-level resolver:
+   * - If value starts with "testdata.", it will be resolved from JSON using ENV + feature + TCId
+   * - Otherwise returns value as-is
+   */
   resolveTestData: (value: string, testInfo: TestInfo) => any;
+
+  /**
+   * Convenience helper for steps:
+   * td("testdata.user1") -> "standard_user"
+   * td("abc") -> "abc"
+   *
+   * Uses playwright-bdd $testInfo fixture internally, so steps don't need to pass it.
+   */
+  td: (value: string) => string;
 };
 
 function getTcIdFromTags(tags: string[]): string {
@@ -27,18 +41,16 @@ function getTcIdFromTags(tags: string[]): string {
 }
 
 /**
- * In playwright-bdd, tests are generated into ".features-gen/.../<feature>.feature.spec.(js|ts)".
+ * In playwright-bdd, tests are generated into:
+ *   ".features-gen/.../<feature>.feature.spec.(js|ts)"
  * testInfo.file points to that generated spec file.
- * We want base "login" from "login.feature.spec.js".
+ * We want base "<feature>" from "<feature>.feature.spec.js".
  */
 function getFeatureBaseNameFromGeneratedSpec(testInfo: TestInfo): string {
-  const file = testInfo.file; // absolute path to generated spec file [web:557]
+  const file = testInfo.file;
   const specName = path.basename(file); // e.g. "login.feature.spec.js"
 
-  // remove ".spec.js" or ".spec.ts"
   const withoutSpecExt = specName.replace(/\.spec\.(js|ts)$/i, ''); // "login.feature"
-
-  // remove ".feature" if present
   const withoutFeatureExt = withoutSpecExt.replace(/\.feature$/i, ''); // "login"
 
   if (!withoutFeatureExt || withoutFeatureExt === specName) {
@@ -58,6 +70,7 @@ function loadFeatureJson(env: string, featureBaseName: string): Record<string, a
 
 export const test = base.extend<AppFixtures>({
   resolveTestData: async ({}, use) => {
+    // Cache per process so repeated lookups don't re-read files.
     const cache = new Map<string, Record<string, any>>();
 
     const resolver = (value: string, testInfo: TestInfo) => {
@@ -66,7 +79,7 @@ export const test = base.extend<AppFixtures>({
 
       const env = process.env.ENV ?? 'dev';
       const tcId = getTcIdFromTags(testInfo.tags ?? []);
-      const feature = getFeatureBaseNameFromGeneratedSpec(testInfo); // ✅ login / inventory / etc
+      const feature = getFeatureBaseNameFromGeneratedSpec(testInfo); // login / inventory / etc
 
       const cacheKey = `${env}::${feature}`;
       const json = cache.get(cacheKey) ?? loadFeatureJson(env, feature);
@@ -84,6 +97,11 @@ export const test = base.extend<AppFixtures>({
     };
 
     await use(resolver);
+  },
+
+  // Convenience helper used by step files
+  td: async ({ resolveTestData, $testInfo }, use) => {
+    await use((value: string) => String(resolveTestData(value, $testInfo)));
   },
 
   loginPage: async ({ page }, use) => {

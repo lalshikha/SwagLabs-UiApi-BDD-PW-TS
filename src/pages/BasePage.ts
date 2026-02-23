@@ -1,8 +1,7 @@
-import { Page, Locator } from '@playwright/test';
+import { Page, Locator, expect } from '@playwright/test';
 import logger from '../utils/logger';
 import { compareWithBaseline, VisualCompareOptions } from '../utils/visualCompare';
-import { L, type LocatorKey } from '../src/config/config_locators';
-
+import { L, type LocatorKey } from '../config/config_locators';
 
 type PageShotOptions = Parameters<Page['screenshot']>[0];
 type LocatorShotOptions = Parameters<Locator['screenshot']>[0];
@@ -22,11 +21,8 @@ export default abstract class BasePage {
   }
 
   /**
-   * Central accessor: pass a key from config_locators (Option B).
+   * Central accessor: pass a key from config_locators.
    * Default behavior: treat mapped value as data-test attribute value.
-   *
-   * If later you want to support non-data-test selectors, you can add a convention like:
-   * L.someKey = 'css:button:has-text("Add to cart")'
    */
   protected getByKey(key: LocatorKey): Locator {
     const raw = L[key];
@@ -36,6 +32,39 @@ export default abstract class BasePage {
 
     return this.getByDataTest(raw);
   }
+
+  // --------------------------
+  // Generic keyword methods
+  // --------------------------
+
+  /** Use in steps when you want a Locator (without exposing selectors). */
+  public $(key: LocatorKey): Locator {
+    return this.getByKey(key);
+  }
+
+  public async click(key: LocatorKey): Promise<void> {
+    await this.$(key).click();
+  }
+
+  public async enterText(key: LocatorKey, value: string): Promise<void> {
+    await this.$(key).fill(value);
+  }
+
+  public async assertVisible(key: LocatorKey): Promise<void> {
+    await expect(this.$(key)).toBeVisible();
+  }
+
+  public async assertText(key: LocatorKey, expected: string): Promise<void> {
+    await expect(this.$(key)).toHaveText(expected);
+  }
+
+  public async assertContainsText(key: LocatorKey, expected: string): Promise<void> {
+    await expect(this.$(key)).toContainText(expected);
+  }
+
+  // --------------------------
+  // Visual compare (unchanged)
+  // --------------------------
 
   protected visualDefaults(): VisualCompareOptions {
     return {

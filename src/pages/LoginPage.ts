@@ -26,11 +26,22 @@ export default class LoginPage extends BasePage {
     this.logger.info('Opened saucedemo');
   }
 
-  async login(username: string, password: string): Promise<void> {
-    this.logger.info(`Performing login for user: ${username}`);
+  /**
+   * Low-level action: fill username/password and click Login.
+   * Use this from both positive and negative scenarios.
+   */
+  async attemptLogin(username: string, password: string): Promise<void> {
+    this.logger.info(`Attempting login for user: ${username}`);
     await this.usernameInput.fill(username);
     await this.passwordInput.fill(password);
     await this.loginBtn.click();
+  }
+
+  /**
+   * Alias for existing usage (kept for backward compatibility).
+   */
+  async login(username: string, password: string): Promise<void> {
+    await this.attemptLogin(username, password);
   }
 
   async loginAs(userType: string): Promise<void> {
@@ -55,11 +66,6 @@ export default class LoginPage extends BasePage {
     this.logger.info(`Login error validated: ${expected}`);
   }
 
-
-  /**
-   * Only the keys you want to expose to feature files.
-   * Step passes: username | password | loginbutton
-   */
   getVisualElement(elementKey: string): Locator {
     const k = elementKey.trim().toLowerCase() as LoginVisualKey;
 
