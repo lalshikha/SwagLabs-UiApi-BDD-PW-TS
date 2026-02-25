@@ -13,3 +13,10 @@ screenshots/visual/actual/
 screenshots/visual/diff/
 screenshots/test.png
 env/*.env
+
+playwright-report/
+playwright-report/**
+
+# JUnit / other reports
+reports/
+reports/**

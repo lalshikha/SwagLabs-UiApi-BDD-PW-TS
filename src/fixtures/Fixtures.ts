@@ -61,7 +61,7 @@ function getFeatureBaseNameFromGeneratedSpec(testInfo: TestInfo): string {
 }
 
 function loadFeatureJson(env: string, featureBaseName: string): Record<string, any> {
-  const filePath = path.resolve(process.cwd(), 'test-data', env, `${featureBaseName}.json`);
+  const filePath = path.resolve(process.cwd(), 'src', 'test-data', env, `${featureBaseName}.json`);
   if (!fs.existsSync(filePath)) {
     throw new Error(`Test-data file not found: ${filePath}`);
   }
