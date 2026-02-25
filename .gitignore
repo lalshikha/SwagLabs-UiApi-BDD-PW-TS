@@ -15,8 +15,12 @@ screenshots/test.png
 env/*.env
 
 playwright-report/
+playwright-report/index.html
 playwright-report/**
+
+test-results/
 
 # JUnit / other reports
 reports/
+reports/junit-results.xml
 reports/**
