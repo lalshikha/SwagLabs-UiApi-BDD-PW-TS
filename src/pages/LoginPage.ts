@@ -33,9 +33,9 @@ export default class LoginPage extends BasePage {
    */
   async attemptLogin(username: string, password: string): Promise<void> {
     this.logger.info(`Attempting login for user: ${username}`);
-    await this.inputInElementByDT(L.login_username_dt, username);
-    await this.inputInElementByDT(L.login_password_dt, password);
-    await this.clickElementByDT(L.login_loginButton_dt);
+    await this.inputInElementByDT(L.login_username, username);
+    await this.inputInElementByDT(L.login_password, password);
+    await this.clickElementByDT(L.login_loginButton);
     this.logger.info('Login submitted==========');
   }
 

@@ -6,8 +6,8 @@ Feature: UI Inventory Functionality
     Given user opens saucedemo application
     When user performs UI login with "testdata.username" and "testdata.password"
     Then visual validation passes for "inventory" page    
-    And "inventory_pageTitle_dt" text should be "Products"
-    And "inventory_hamburgerMenu_id" should be visible
-    And "inventory_addToCartButton_dt" should be visible
+    And "inventory_pageTitle" text should be "Products"
+    And "inventory_hamburgerMenu" should be visible
+    And "inventory_addToCartButton" should be visible
 
     

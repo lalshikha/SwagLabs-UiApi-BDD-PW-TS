@@ -63,44 +63,58 @@ export default abstract class BasePage {
   }
   
   // data inputs
-  public async inputInElementById(id: string, input: string, message?: string): Promise<void> {
+  protected async inputInElementById(id: string, input: string, message?: string): Promise<void> {
     await this.byId(id).fill(input);
   }
 
-  public async inputInElementByDT(locator: string, input: string, message?: string): Promise<void> {
+  protected async inputInElementByDT(locator: string, input: string, message?: string): Promise<void> {
     await this.byDataTest(locator).fill(input);
+  }
+  
+  // element clicks
+  protected async clickElementById(id: string, message?: string): Promise<void> {
+    await this.byId(id).click();
+  }
+
+  protected async clickElementByDT(value: string, message?: string): Promise<void> {
+    await this.byDataTest(value).click();
+  }
+
+  // Visibility asserts
+  protected async assertElementByIdIsVisible(id: string, message?: string): Promise<void> {
+    await expect(this.byId(id), message).toBeVisible();
+  }
+
+  protected async assertElementByDTIsVisible(value: string, message?: string): Promise<void> {
+    await expect(this.byDataTest(value), message).toBeVisible();
+  }
+
+  // Text asserts
+  protected async assertTextMatchById(id: string, matchWith: string | RegExp, message?: string): Promise<void> {
+    await expect(this.byId(id), message).toContainText(matchWith);
+  }
+
+  protected async assertTextMatchByDT(key: string, expectedText: string | RegExp, message?: string): Promise<void> {
+    await expect(this.byDataTest(key), message).toContainText(expectedText);
   }
 
   public async inputInElementByKey(key: LocatorKey, input: string, message?: string): Promise<void> {
     await this.$(key).fill(input);
   }
-  
-  // element clicks
-  public async clickElementById(id: string, message?: string): Promise<void> {
-    await this.byId(id).click();
-  }
 
-  public async clickElementByDT(value: string, message?: string): Promise<void> {
-    await this.byDataTest(value).click();
-  }
+  public async clickByKey(key: LocatorKey, message?: string): Promise<void> {
+  await expect(this.$(key), message).toBeVisible();
+  await this.$(key).click();
+}
 
-  // Visibility asserts
-  public async assertElementByIdIsVisible(id: string, message?: string): Promise<void> {
-    await expect(this.byId(id), message).toBeVisible();
-  }
+public async assertVisibleByKey(key: LocatorKey, message?: string): Promise<void> {
+  await expect(this.$(key), message).toBeVisible();
+}
 
-  public async assertElementByDTIsVisible(value: string, message?: string): Promise<void> {
-    await expect(this.byDataTest(value), message).toBeVisible();
-  }
+public async assertContainsTextByKey(key: LocatorKey, expectedText: string | RegExp, message?: string): Promise<void> {
+  await expect(this.$(key), message).toContainText(expectedText);
+}
 
-  // Text asserts
-  public async assertTextMatchById(id: string, matchWith: string | RegExp, message?: string): Promise<void> {
-    await expect(this.byId(id), message).toContainText(matchWith);
-  }
-
-  public async assertTextMatchByDT(key: string, expectedText: string | RegExp, message?: string): Promise<void> {
-    await expect(this.byDataTest(key), message).toContainText(expectedText);
-  }
   // --------------------------
   // Visual compare (unchanged)
   // --------------------------

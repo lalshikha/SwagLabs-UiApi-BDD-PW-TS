@@ -9,30 +9,17 @@ Given('user opens saucedemo application', async ({ page }) => {
 });
 
 When('user enters {string} in {string}', async ({ commonPage, td }, value: string, key: string) => {
-  await commonPage.inputInElementByDT(L[asLocatorKey(key)], td(value));
+  await commonPage.inputInElementByKey(asLocatorKey(key), td(value));
 });
 
 When('user clicks {string}', async ({ commonPage }, key: string) => {
-  await commonPage.clickElementByDT(L[asLocatorKey(key)]);
+  await commonPage.clickByKey(asLocatorKey(key));
 });
 
 Then('{string} should be visible', async ({ commonPage }, key: string) => {
-  const locatorKey = asLocatorKey(key);
-  const value = L[locatorKey];
-
-  if (locatorKey.endsWith('_dt')) {
-    await commonPage.assertElementByDTIsVisible(value);
-  } 
-  else if (locatorKey.endsWith('_id')) {
-    await commonPage.assertElementByIdIsVisible(value);
-  } 
-  else {
-    throw new Error(
-      `Unsupported locator type for key: ${locatorKey}. Expected suffix _dt or _id`
-    );
-  }
+    await commonPage.assertVisibleByKey(asLocatorKey(key));
 });
 
 Then('{string} text should be {string}', async ({ commonPage }, key: string, expectedText: string) => {
-  await commonPage.assertTextMatchByDT(L[asLocatorKey(key)], expectedText);
+  await commonPage.assertContainsTextByKey(asLocatorKey(key), expectedText);
 });

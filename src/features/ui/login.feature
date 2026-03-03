@@ -6,14 +6,14 @@ Feature: UI Login Functionality
 
   @TCId-Login001
   Scenario Outline: Valid user login through UI flow
-    Then visual validation passes for "login_username_dt" element
-    And visual validation passes for "login_password_dt" element
-    And visual validation passes for "login_loginButton_dt" element
+    Then visual validation passes for "login_username" element
+    And visual validation passes for "login_password" element
+    And visual validation passes for "login_loginButton" element
     And visual validation passes for "login" page
-    When user enters "<username>" in "login_username_dt"
-    And user enters "testdata.password" in "login_password_dt"
-    And user clicks "login_loginButton_dt"
-    Then "inventory_page_dt" should be visible
+    When user enters "<username>" in "login_username"
+    And user enters "testdata.password" in "login_password"
+    And user clicks "login_loginButton"
+    Then "inventory_page" should be visible
 
     Examples:
       | username       |
@@ -22,11 +22,11 @@ Feature: UI Login Functionality
 
   @TCId-Login001
   Scenario: Login should fail for invalid/missing username and password
-    When user enters "<username>" in "login_username_dt"
-    And user enters "<password>" in "login_password_dt"
-    And user clicks "login_loginButton_dt"
-    Then "login_error_dt" should be visible
-    And "login_error_dt" text should be "<error_message>"
+    When user enters "<username>" in "login_username"
+    And user enters "<password>" in "login_password"
+    And user clicks "login_loginButton"
+    Then "login_error" should be visible
+    And "login_error" text should be "<error_message>"
 
     Examples:
       | username        | password          | error_message                                                             |
