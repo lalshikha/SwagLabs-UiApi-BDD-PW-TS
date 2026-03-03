@@ -9,10 +9,11 @@ dotenv.config({ path: envFile });
 console.log(`Loaded environment variables from ${envFile}`);
 
 const testDir = defineBddConfig({
-  paths: ['src/features/**/*.feature'],
-  require: [    'src/fixtures/**/*.{ts,js}',
-    'src/step-definitions/**/*.{ts,js}',
-    'src/step-definitions/**/*.{ts,js}',],
+  features: ['src/features/**/*.feature'],
+  steps: ['src/step-definitions/**/*.{ts,js}'],
+  importTestFrom: 'src/fixtures/Fixtures.ts',
+  outputDir: '.features-gen',
+  missingSteps: 'fail-on-gen',
 });
 
 export default defineConfig({

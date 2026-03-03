@@ -1,23 +1,10 @@
 {
-  "TCId-001": {
+  "TCId-Login001": {
     "user1": "standard_user",
     "user2": "visual_user",
     "password": "secret_sauce"
   },
-  "TCId-002": {
-    "password": "secret_sauce"
-  },
-  "TCId-003": {
-    "username": "standard_user"
-  },
-  "TCId-004": {},
-  "TCId-005": {
-    "password": "secret_sauce"
-  },
-  "TCId-006": {
-    "username": "standard_user"
-  },
-  "TCId-007": {
+  "TCId-Login002": {
     "password": "secret_sauce"
   }
 }

@@ -4,60 +4,35 @@ Feature: UI Login Functionality
   Background:
     Given user opens saucedemo application
 
-  @TCId-001
+  @TCId-Login001
   Scenario Outline: Valid user login through UI flow
-    Then visual validation passes for "login_username" element
-    And visual validation passes for "login_password" element
-    And visual validation passes for "login_loginButton" element
+    Then visual validation passes for "login_username_dt" element
+    And visual validation passes for "login_password_dt" element
+    And visual validation passes for "login_loginButton_dt" element
     And visual validation passes for "login" page
-    When user enters "<username>" in "login_username"
-    And user enters "testdata.password" in "login_password"
-    And user clicks "login_loginButton"
-    Then "inventory_container" should be visible
+    When user enters "<username>" in "login_username_dt"
+    And user enters "testdata.password" in "login_password_dt"
+    And user clicks "login_loginButton_dt"
+    Then "inventory_page_dt" should be visible
 
     Examples:
       | username       |
       | testdata.user1 |
       | testdata.user2 |
 
-  @TCId-002
-  Scenario: Login should fail when username is blank
-    When user enters "" in "login_username"
-    And user enters "testdata.password" in "login_password"
-    And user clicks "login_loginButton"
-    Then "login_error" text should be "Epic sadface: Username is required"
+  @TCId-Login001
+  Scenario: Login should fail for invalid/missing username and password
+    When user enters "<username>" in "login_username_dt"
+    And user enters "<password>" in "login_password_dt"
+    And user clicks "login_loginButton_dt"
+    Then "login_error_dt" should be visible
+    And "login_error_dt" text should be "<error_message>"
 
-  @TCId-003
-  Scenario: Login should fail when password is blank
-    When user enters "standard_user" in "login_username"
-    And user enters "" in "login_password"
-    And user clicks "login_loginButton"
-    Then "login_error" text should be "Epic sadface: Password is required"
+    Examples:
+      | username        | password          | error_message                                                             |
+      |                 | testdata.password | Epic sadface: Username is required                                        |
+      | wrong_username  | testdata.password | Epic sadface: Username and password do not match any user in this service |
+      | standard_user   |                   | Epic sadface: Password is required                                        |
+      | standard_user   | wrong_password    | Epic sadface: Username and password do not match any user in this service |
+      | locked_out_user | testdata.password | Epic sadface: Sorry, this user has been locked out.                       |
 
-  @TCId-004
-  Scenario: Login should fail when both username and password are blank
-    When user enters "" in "login_username"
-    And user enters "" in "login_password"
-    And user clicks "login_loginButton"
-    Then "login_error" text should be "Epic sadface: Username is required"
-
-  @TCId-005
-  Scenario: Login should fail for invalid username
-    When user enters "wrong_user" in "login_username"
-    And user enters "testdata.password" in "login_password"
-    And user clicks "login_loginButton"
-    Then "login_error" text should be "Epic sadface: Username and password do not match any user in this service"
-
-  @TCId-006
-  Scenario: Login should fail for invalid password
-    When user enters "standard_user" in "login_username"
-    And user enters "wrong_password" in "login_password"
-    And user clicks "login_loginButton"
-    Then "login_error" text should be "Epic sadface: Username and password do not match any user in this service"
-
-  @TCId-007
-  Scenario: Login should fail for locked out user
-    When user enters "locked_out_user" in "login_username"
-    And user enters "testdata.password" in "login_password"
-    And user clicks "login_loginButton"
-    Then "login_error" text should be "Epic sadface: Sorry, this user has been locked out."

@@ -3,18 +3,18 @@
 
 export const L = {
   // Login page
-  login_username: 'username',
-  login_password: 'password',
-  login_loginButton: 'login-button',
-  login_error: 'error',
+  login_username_dt: 'username',
+  login_password_dt: 'password',
+  login_loginButton_dt: 'login-button',
+  login_error_dt: 'error',
 
   // Inventory page
-  inventory_container: 'inventory-container',
-  inventory_item: 'inventory-item',
+  inventory_item_dt: 'inventory-item',
+  inventory_pageTitle_dt: 'title',
+  inventory_hamburgerMenu_id: 'react-burger-menu-btn',
+  inventory_addToCartButton_dt: 'add-to-cart-sauce-labs-backpack',
+  inventory_page_dt: 'inventory-container',
 
-  // If you can add stable test ids in app, prefer data-test for buttons too.
-  // Otherwise keep a "selector:" entry and handle it in BasePage.getByKey().
-  // inventory_firstAddToCartButton: 'add-to-cart-0',
 } as const;
 
 export type LocatorKey = keyof typeof L;

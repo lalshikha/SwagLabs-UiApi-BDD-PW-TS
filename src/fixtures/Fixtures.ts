@@ -1,8 +1,9 @@
-// fixtures/Fixtures.ts
-import { test as base, createBdd } from 'playwright-bdd';
-import { request, type APIRequestContext, type TestInfo } from '@playwright/test';
+// src/fixtures/Fixtures.ts
 import fs from 'fs';
 import path from 'path';
+
+import { request, type APIRequestContext, type TestInfo } from '@playwright/test';
+import { test as base, createBdd } from 'playwright-bdd';
 
 import LoginPage from '../pages/LoginPage';
 import InventoryPage from '../pages/InventoryPage';
@@ -22,14 +23,14 @@ export type AppFixtures = {
    * - If value starts with "testdata.", it will be resolved from JSON using ENV + feature + TCId
    * - Otherwise returns value as-is
    */
-  resolveTestData: (value: string, testInfo: TestInfo) => any;
+  resolveTestData: (value: string, testInfo: TestInfo) => unknown;
 
   /**
    * Convenience helper for steps:
-   * td("testdata.user1") -> "standard_user"
+   * td("testdata.username") -> resolved value from json
    * td("abc") -> "abc"
    *
-   * Uses playwright-bdd $testInfo fixture internally, so steps don't need to pass it.
+   * Uses playwright-bdd $testInfo fixture internally.
    */
   td: (value: string) => string;
 };
@@ -44,54 +45,49 @@ function getTcIdFromTags(tags: string[]): string {
  * In playwright-bdd, tests are generated into:
  *   ".features-gen/.../<feature>.feature.spec.(js|ts)"
  * testInfo.file points to that generated spec file.
- * We want base "<feature>" from "<feature>.feature.spec.js".
  */
 function getFeatureBaseNameFromGeneratedSpec(testInfo: TestInfo): string {
-  const file = testInfo.file;
-  const specName = path.basename(file); // e.g. "login.feature.spec.js"
-
-  const withoutSpecExt = specName.replace(/\.spec\.(js|ts)$/i, ''); // "login.feature"
-  const withoutFeatureExt = withoutSpecExt.replace(/\.feature$/i, ''); // "login"
+  const specName = path.basename(testInfo.file); // e.g. "inventory.feature.spec.js"
+  const withoutSpecExt = specName.replace(/\.spec\.(js|ts)$/i, ''); // "inventory.feature"
+  const withoutFeatureExt = withoutSpecExt.replace(/\.feature$/i, ''); // "inventory"
 
   if (!withoutFeatureExt || withoutFeatureExt === specName) {
-    throw new Error(`Cannot derive feature name from testInfo.file="${file}"`);
+    throw new Error(`Cannot derive feature name from testInfo.file="${testInfo.file}"`);
   }
-
   return withoutFeatureExt;
 }
 
 function loadFeatureJson(env: string, featureBaseName: string): Record<string, any> {
   const filePath = path.resolve(process.cwd(), 'src', 'test-data', env, `${featureBaseName}.json`);
-  if (!fs.existsSync(filePath)) {
-    throw new Error(`Test-data file not found: ${filePath}`);
-  }
+  if (!fs.existsSync(filePath)) throw new Error(`Test-data file not found: ${filePath}`);
   return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 }
 
+// Exported custom test instance (required for playwright-bdd importTestFrom). [web:85]
 export const test = base.extend<AppFixtures>({
   resolveTestData: async ({}, use) => {
-    // Cache per process so repeated lookups don't re-read files.
+    // Cache must live outside the resolver function to actually cache across calls.
     const cache = new Map<string, Record<string, any>>();
 
-    const resolver = (value: string, testInfo: TestInfo) => {
+    const resolver = (value: string, testInfo: TestInfo): unknown => {
       if (typeof value !== 'string') return value;
       if (!value.startsWith('testdata.')) return value;
 
       const env = process.env.ENV ?? 'dev';
       const tcId = getTcIdFromTags(testInfo.tags ?? []);
-      const feature = getFeatureBaseNameFromGeneratedSpec(testInfo); // login / inventory / etc
+      const feature = getFeatureBaseNameFromGeneratedSpec(testInfo);
 
       const cacheKey = `${env}::${feature}`;
-      const json = cache.get(cacheKey) ?? loadFeatureJson(env, feature);
-      cache.set(cacheKey, json);
+      let json = cache.get(cacheKey);
+      if (!json) {
+        json = loadFeatureJson(env, feature);
+        cache.set(cacheKey, json);
+      }
 
-      const key = value.replace('testdata.', '');
+      const key = value.replace(/^testdata\./, '');
       const row = json[tcId];
       if (!row) throw new Error(`No data for ${tcId} in ${feature}.json (env=${env})`);
-
-      if (!(key in row)) {
-        throw new Error(`Key "${key}" missing for ${tcId} in ${feature}.json (env=${env})`);
-      }
+      if (!(key in row)) throw new Error(`Key "${key}" missing for ${tcId} in ${feature}.json (env=${env})`);
 
       return row[key];
     };
@@ -99,7 +95,6 @@ export const test = base.extend<AppFixtures>({
     await use(resolver);
   },
 
-  // Convenience helper used by step files
   td: async ({ resolveTestData, $testInfo }, use) => {
     await use((value: string) => String(resolveTestData(value, $testInfo)));
   },
@@ -117,10 +112,14 @@ export const test = base.extend<AppFixtures>({
   },
 
   apiContext: async ({}, use) => {
-    const baseURL = process.env.API_BASE_URL ?? process.env.APP_URL ?? 'https://www.saucedemo.com/';
+    const baseURL =
+      process.env.API_BASE_URL ??
+      process.env.APP_URL ??
+      'https://www.saucedemo.com/';
+
     const ctx = await request.newContext({ baseURL });
     await use(ctx);
-    await ctx.dispose();
+    await ctx.dispose(); // dispose to release resources. [web:37]
   },
 
   apiService: async ({ apiContext }, use) => {
@@ -128,4 +127,6 @@ export const test = base.extend<AppFixtures>({
   },
 });
 
+// Export BDD keywords bound to your custom test instance.
+// You can import { Given, When, Then } from this file in step definitions. [web:85]
 export const { Given, When, Then } = createBdd(test);

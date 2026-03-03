@@ -1,10 +1,8 @@
 // step-definitions/ui/loginSteps.ts
-import { Then } from '../../fixtures/Fixtures';
+import { When, Then } from '../../fixtures/Fixtures';
+import { saucedemoUrl } from '../../utils/testData';
+import { asLocatorKey } from '../../utils/asLocatorKey';
 
-Then('UI login should be successful', async ({ inventoryPage }) => {
-  await inventoryPage.assertInventoryLoaded();
-});
-
-Then('UI login should fail with error {string}', async ({ loginPage, td }, expectedError: string) => {
-  await loginPage.assertLoginErrorText(td(expectedError));
+When('user performs UI login with {string} and {string}', async ({ loginPage, td }, username: string, password: string) => {
+  await loginPage.attemptLogin(td(username), td(password));
 });

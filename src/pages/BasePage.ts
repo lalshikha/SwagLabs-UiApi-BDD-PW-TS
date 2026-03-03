@@ -15,24 +15,34 @@ export default abstract class BasePage {
     this.logger.info(`${this.constructor.name} initialized`);
   }
 
-  // Your AUT uses data-test="..."
-  protected getByDataTest(value: string): Locator {
+  // --------------------------
+  // Locator helpers (by attrs)
+  // --------------------------
+
+  protected byId(id: string): Locator {
+    return this.page.locator(`#${id}`);
+  }
+
+  protected byDataTest(value: string): Locator {
     return this.page.locator(`[data-test="${value}"]`);
   }
 
-  /**
-   * Central accessor: pass a key from config_locators.
-   * Default behavior: treat mapped value as data-test attribute value.
-   */
-  protected getByKey(key: LocatorKey): Locator {
-    const raw = L[key];
-
-    // Optional extension point:
-    if (raw.startsWith('css:')) return this.page.locator(raw.replace(/^css:/, ''));
-
-    return this.getByDataTest(raw);
+  protected byTitle(title: string | RegExp): Locator {
+    return this.page.getByTitle(title);
   }
 
+  protected byRole(
+    role: Parameters<Page['getByRole']>[0],
+    name?: string | RegExp
+  ): Locator {
+    return this.page.getByRole(role, name ? { name } : undefined);
+  }
+
+  // protected getByDataTest(value: string): Locator {
+  //   return this.byDataTest(value);
+  // }
+
+  
   // --------------------------
   // Generic keyword methods
   // --------------------------
@@ -42,26 +52,55 @@ export default abstract class BasePage {
     return this.getByKey(key);
   }
 
-  public async click(key: LocatorKey): Promise<void> {
-    await this.$(key).click();
+  /**
+   * Central accessor: pass a key from config_locators.
+   * Default behavior: treat mapped value as data-test attribute value.
+   */
+  protected getByKey(key: LocatorKey): Locator {
+    const raw = L[key];
+    if (raw.startsWith('css:')) return this.page.locator(raw.replace(/^css:/, ''));
+    return this.byDataTest(raw);
+  }
+  
+  // data inputs
+  public async inputInElementById(id: string, input: string, message?: string): Promise<void> {
+    await this.byId(id).fill(input);
   }
 
-  public async enterText(key: LocatorKey, value: string): Promise<void> {
-    await this.$(key).fill(value);
+  public async inputInElementByDT(locator: string, input: string, message?: string): Promise<void> {
+    await this.byDataTest(locator).fill(input);
   }
 
-  public async assertVisible(key: LocatorKey): Promise<void> {
-    await expect(this.$(key)).toBeVisible();
+  public async inputInElementByKey(key: LocatorKey, input: string, message?: string): Promise<void> {
+    await this.$(key).fill(input);
+  }
+  
+  // element clicks
+  public async clickElementById(id: string, message?: string): Promise<void> {
+    await this.byId(id).click();
   }
 
-  public async assertText(key: LocatorKey, expected: string): Promise<void> {
-    await expect(this.$(key)).toHaveText(expected);
+  public async clickElementByDT(value: string, message?: string): Promise<void> {
+    await this.byDataTest(value).click();
   }
 
-  public async assertContainsText(key: LocatorKey, expected: string): Promise<void> {
-    await expect(this.$(key)).toContainText(expected);
+  // Visibility asserts
+  public async assertElementByIdIsVisible(id: string, message?: string): Promise<void> {
+    await expect(this.byId(id), message).toBeVisible();
   }
 
+  public async assertElementByDTIsVisible(value: string, message?: string): Promise<void> {
+    await expect(this.byDataTest(value), message).toBeVisible();
+  }
+
+  // Text asserts
+  public async assertTextMatchById(id: string, matchWith: string | RegExp, message?: string): Promise<void> {
+    await expect(this.byId(id), message).toContainText(matchWith);
+  }
+
+  public async assertTextMatchByDT(key: string, expectedText: string | RegExp, message?: string): Promise<void> {
+    await expect(this.byDataTest(key), message).toContainText(expectedText);
+  }
   // --------------------------
   // Visual compare (unchanged)
   // --------------------------
@@ -69,7 +108,7 @@ export default abstract class BasePage {
   protected visualDefaults(): VisualCompareOptions {
     return {
       threshold: 0.1,
-      maxDiffPixels: -1, // disabled (ratio-only)
+      maxDiffPixels: -1,
       maxDiffPixelRatio: 0.001,
       maxSizeDiffPixels: 0,
       includeAA: false,

@@ -4,6 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "bddgen": "bddgen && playwright test",
+    "pw:list": "npm run bddgen && playwright test --list",
+    "pw:test": "npm run bddgen && playwright test",
+    "pw:inventory": "npm run bddgen && playwright test --grep \"@inventory\"",
+    "clean:bdd": "rimraf .features-gen src/features/**/*.feature.spec.* dist test-results playwright-report",
+    "pw:api": "playwright test --grep \"@api\"",
     "test": "cucumber-js",
     "test:smoke": "cucumber-js --require-module ts-node/register --config cucumber.conf.ts -t @smoke",
     "test:ui": "cucumber-js --require-module ts-node/register --config cucumber.conf.ts features/ui",
