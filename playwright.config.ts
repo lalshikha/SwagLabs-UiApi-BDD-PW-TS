@@ -11,7 +11,6 @@ console.log(`Loaded environment variables from ${envFile}`);
 const testDir = defineBddConfig({
   features: ['src/features/**/*.feature'],
   steps: ['src/step-definitions/**/*.{ts,js}'],
-  importTestFrom: 'src/fixtures/Fixtures.ts',
   outputDir: '.features-gen',
   missingSteps: 'fail-on-gen',
 });
