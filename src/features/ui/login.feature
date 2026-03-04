@@ -2,7 +2,7 @@
 Feature: UI Login Functionality
 
   Background:
-    Given user opens saucedemo application
+    Given user opens "saucedemoUrl"
 
   @TCId-Login001
   Scenario Outline: Valid user login through UI flow
@@ -20,7 +20,7 @@ Feature: UI Login Functionality
       | testdata.user1 |
       | testdata.user2 |
 
-  @TCId-Login001
+  @TCId-Login002
   Scenario: Login should fail for invalid/missing username and password
     When user enters "<username>" in "login_username"
     And user enters "<password>" in "login_password"

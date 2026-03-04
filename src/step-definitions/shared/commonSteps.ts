@@ -1,10 +1,13 @@
 import { Given, When, Then } from '../../fixtures/Fixtures';
-import { saucedemoUrl } from '../../utils/testData';
+import { testData, type TestData } from '../../utils/testData';
 import { asLocatorKey } from '../../utils/asLocatorKey';
-import { L } from '../../config/config_locators';
 
-Given('user opens saucedemo application', async ({ page }) => {
-  await page.goto(saucedemoUrl);
+Given('user opens {string}', async ({ page }, urlKey: string) => {
+  const key = urlKey.trim() as keyof TestData;
+  if (!(key in testData)) {
+    throw new Error(`Unknown url key "${urlKey}". Valid keys: ${Object.keys(testData).join(', ')}`);
+  }
+  await page.goto(testData[key]);
   await page.waitForLoadState('networkidle');
 });
 
@@ -17,7 +20,7 @@ When('user clicks {string}', async ({ commonPage }, key: string) => {
 });
 
 Then('{string} should be visible', async ({ commonPage }, key: string) => {
-    await commonPage.assertVisibleByKey(asLocatorKey(key));
+  await commonPage.assertVisibleByKey(asLocatorKey(key));
 });
 
 Then('{string} text should be {string}', async ({ commonPage }, key: string, expectedText: string) => {

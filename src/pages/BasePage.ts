@@ -38,24 +38,11 @@ export default abstract class BasePage {
     return this.page.getByRole(role, name ? { name } : undefined);
   }
 
-  // protected getByDataTest(value: string): Locator {
-  //   return this.byDataTest(value);
-  // }
-
-  
-  // --------------------------
-  // Generic keyword methods
-  // --------------------------
-
   /** Use in steps when you want a Locator (without exposing selectors). */
   public $(key: LocatorKey): Locator {
     return this.getByKey(key);
   }
 
-  /**
-   * Central accessor: pass a key from config_locators.
-   * Default behavior: treat mapped value as data-test attribute value.
-   */
   protected getByKey(key: LocatorKey): Locator {
     const raw = L[key];
     if (raw.startsWith('css:')) return this.page.locator(raw.replace(/^css:/, ''));
