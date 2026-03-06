@@ -10,7 +10,11 @@
     "pw:inventory": "npm run bddgen && playwright test --grep \"@inventory\"",
     "clean:bdd": "rimraf .features-gen src/features/**/*.feature.spec.* dist test-results playwright-report",
     "pw:api": "npm run bddgen && playwright test --grep \"@api\"",
-    "test": "npm run pw:test"
+    "test": "npm run pw:test",
+    "pw:smoke": "npm run bddgen && playwright test --grep \"@smoke\"",
+    "pw:ui": "npm run bddgen && playwright test --grep \"@ui\"",
+    "pw:regression": "npm run bddgen && playwright test --grep \"@regression\"",
+    "pw:login": "npm run bddgen && playwright test --grep \"@login\""
   },
   "keywords": [],
   "author": "",
