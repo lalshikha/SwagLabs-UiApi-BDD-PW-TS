@@ -17,7 +17,7 @@ Feature: UI Login Functionality
 
     Examples:
       | username       |
-      | testdata.user1 |
+      | testdata.user12 |
       # | testdata.user2 |
 
   @TCId-Login002
