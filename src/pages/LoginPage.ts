@@ -10,7 +10,7 @@ export default class LoginPage extends BasePage {
     this.logger.info(`Attempting login for user: ${username}`);
     await this.$('login_username').fill(username);
     await this.$('login_password').fill(password);
-    await this.$('login_loginButton').click();
+    await this.clickByKey('login_loginButton'); // uses fallback chain
     this.logger.info('Login submitted==========');
   }
 }

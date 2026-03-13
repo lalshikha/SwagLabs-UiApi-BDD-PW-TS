@@ -26,3 +26,7 @@ Then('{string} should be visible', async ({ commonPage }, key: string) => {
 Then('{string} text should be {string}', async ({ commonPage }, key: string, expectedText: string) => {
   await commonPage.assertContainsTextByKey(asLocatorKey(key), expectedText);
 });
+
+Then('page title should be {string}', async ({ commonPage }, expectedText: string, exact?: boolean, message?: string) => {
+  await commonPage.assertElementByTextIsVisible(expectedText, true, message || "Page title does not match expected value");
+});

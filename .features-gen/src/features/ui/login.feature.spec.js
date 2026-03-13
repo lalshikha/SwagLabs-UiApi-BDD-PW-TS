@@ -81,6 +81,11 @@ test.describe('UI Login Functionality', () => {
 
 // == technical section ==
 
+test.beforeAll('BeforeAll Hooks', ({ $runBeforeAllHooks, $workerInfo }) => $runBeforeAllHooks(test, { $workerInfo }, bddFileData));
+test.afterAll('AfterAll Hooks', ({ $registerAfterAllHooks, $workerInfo }) => $registerAfterAllHooks(test, { $workerInfo }, bddFileData));
+test.beforeEach('BeforeEach Hooks', ({ $runScenarioHooks, page }) => $runScenarioHooks('before', { page }));
+test.afterEach('AfterEach Hooks', ({ $runScenarioHooks, page }) => $runScenarioHooks('after', { page }));
+
 test.use({
   $test: [({}, use) => use(test), { scope: 'test', box: true }],
   $uri: [({}, use) => use('src\\features\\ui\\login.feature'), { scope: 'test', box: true }],

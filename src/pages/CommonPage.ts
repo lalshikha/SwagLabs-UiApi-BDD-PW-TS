@@ -15,9 +15,8 @@ export default class CommonPage extends BasePage {
 
   async assertVisualElement(locatorKeyText: string): Promise<void> {
     const locatorKey = asLocatorKey(locatorKeyText);
-
     const snapshot = ensurePng(`elementUnderTest_${String(locatorKey).toLowerCase()}`);
-    const locator: Locator = this.$(locatorKey);
+    const locator: Locator = await this.getWorkingLocatorByKey(locatorKey);
 
     await this.assertElementScreenshot(locator, snapshot);
   }

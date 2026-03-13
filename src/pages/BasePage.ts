@@ -1,7 +1,7 @@
 import { Page, Locator, expect } from '@playwright/test';
 import logger from '../utils/logger';
 import { compareWithBaseline, VisualCompareOptions } from '../utils/visualCompare';
-import { L, type LocatorKey } from '../config/config_locators';
+import { L, type LocatorKey, type LocatorDef } from '../config/config_locators';
 
 type PageShotOptions = Parameters<Page['screenshot']>[0];
 type LocatorShotOptions = Parameters<Locator['screenshot']>[0];
@@ -16,7 +16,7 @@ export default abstract class BasePage {
   }
 
   // --------------------------
-  // Locator helpers (by attrs)
+  // Locator helpers
   // --------------------------
 
   protected byId(id: string): Locator {
@@ -31,6 +31,10 @@ export default abstract class BasePage {
     return this.page.getByTitle(title);
   }
 
+  protected byText(text: string | RegExp, exact?: boolean): Locator {
+    return this.page.getByText(text, exact !== undefined ? { exact } : undefined);
+  }
+
   protected byRole(
     role: Parameters<Page['getByRole']>[0],
     name?: string | RegExp
@@ -38,27 +42,117 @@ export default abstract class BasePage {
     return this.page.getByRole(role, name ? { name } : undefined);
   }
 
-  /** Use in steps when you want a Locator (without exposing selectors). */
+  protected resolveRawLocator(raw: string): Locator {
+    if (raw.startsWith('css:')) {
+      return this.page.locator(raw.replace(/^css:/, ''));
+    }
+
+    if (raw.startsWith('id:')) {
+      return this.byId(raw.replace(/^id:/, ''));
+    }
+
+    if (raw.startsWith('title:')) {
+      return this.byTitle(raw.replace(/^title:/, ''));
+    }
+
+    if (raw.startsWith('text:')) {
+      return this.byText(raw.replace(/^text:/, ''), true);
+    }
+
+    if (raw.startsWith('role:')) {
+      const value = raw.replace(/^role:/, '');
+      const [rolePart, ...nameParts] = value.split('|');
+      const role = rolePart?.trim() as Parameters<Page['getByRole']>[0];
+      const name = nameParts.join('|').trim();
+
+      if (!role) {
+        throw new Error(`Invalid role locator: ${raw}`);
+      }
+
+      return this.byRole(role, name || undefined);
+    }
+
+    return this.byDataTest(raw);
+  }
+
+  protected getLocatorCandidates(key: LocatorKey): string[] {
+    const def: LocatorDef = L[key];
+
+    if (typeof def === 'string') {
+      return [def];
+    }
+
+    return [def.primary, ...(def.fallbacks ?? [])];
+  }
+
+  /** Returns the primary locator only. */
+  protected getByKey(key: LocatorKey): Locator {
+    const [primary] = this.getLocatorCandidates(key);
+    return this.resolveRawLocator(primary);
+  }
+
+  /**
+   * Use in steps when you want a Locator without exposing selectors.
+   * For keys with fallbacks, this returns the primary locator only.
+   */
   public $(key: LocatorKey): Locator {
     return this.getByKey(key);
   }
 
-  protected getByKey(key: LocatorKey): Locator {
-    const raw = L[key];
-    if (raw.startsWith('css:')) return this.page.locator(raw.replace(/^css:/, ''));
-    return this.byDataTest(raw);
+  protected async getWorkingLocatorByKey(
+    key: LocatorKey,
+    timeoutPerLocator = 800
+  ): Promise<Locator> {
+    const candidates = this.getLocatorCandidates(key);
+    const errors: string[] = [];
+
+    for (let i = 0; i < candidates.length; i++) {
+      const candidate = candidates[i];
+      const locator = this.resolveRawLocator(candidate);
+
+      try {
+        await locator.waitFor({ state: 'visible', timeout: timeoutPerLocator });
+
+        if (i > 0) {
+          this.logger.warn(
+            `Fallback locator used for key "${String(key)}": "${candidate}"`
+          );
+        }
+
+        return locator;
+      } catch (error) {
+        const message = error instanceof Error ? error.message : String(error);
+        errors.push(`${candidate} => ${message}`);
+      }
+    }
+
+    throw new Error(
+      `No locator matched for key "${String(key)}". Tried: ${errors.join(' | ')}`
+    );
   }
-  
-  // data inputs
+
+  // --------------------------
+  // Input helpers
+  // --------------------------
+
   protected async inputInElementById(id: string, input: string, message?: string): Promise<void> {
     await this.byId(id).fill(input);
   }
 
-  protected async inputInElementByDT(locator: string, input: string, message?: string): Promise<void> {
-    await this.byDataTest(locator).fill(input);
+  protected async inputInElementByDT(value: string, input: string, message?: string): Promise<void> {
+    await this.byDataTest(value).fill(input);
   }
-  
-  // element clicks
+
+  public async inputInElementByKey(key: LocatorKey, input: string, message?: string): Promise<void> {
+    const locator = await this.getWorkingLocatorByKey(key);
+    await expect(locator, message).toBeVisible();
+    await locator.fill(input);
+  }
+
+  // --------------------------
+  // Click helpers
+  // --------------------------
+
   protected async clickElementById(id: string, message?: string): Promise<void> {
     await this.byId(id).click();
   }
@@ -67,7 +161,26 @@ export default abstract class BasePage {
     await this.byDataTest(value).click();
   }
 
+  protected async clickElementByRole(
+    role: Parameters<Page['getByRole']>[0],
+    name?: string | RegExp,
+    message?: string
+  ): Promise<void> {
+    const locator = this.byRole(role, name);
+    await expect(locator, message).toBeVisible();
+    await locator.click();
+  }
+
+  public async clickByKey(key: LocatorKey, message?: string): Promise<void> {
+    const locator = await this.getWorkingLocatorByKey(key);
+    await expect(locator, message).toBeVisible();
+    await locator.click();
+  }
+
+  // --------------------------
   // Visibility asserts
+  // --------------------------
+
   protected async assertElementByIdIsVisible(id: string, message?: string): Promise<void> {
     await expect(this.byId(id), message).toBeVisible();
   }
@@ -76,34 +189,67 @@ export default abstract class BasePage {
     await expect(this.byDataTest(value), message).toBeVisible();
   }
 
+  protected async assertElementByRoleIsVisible(
+    role: Parameters<Page['getByRole']>[0],
+    name?: string | RegExp,
+    message?: string
+  ): Promise<void> {
+    await expect(this.byRole(role, name), message).toBeVisible();
+  }
+
+  public async assertElementByTextIsVisible(
+    text: string | RegExp,
+    exact?: boolean,
+    message?: string
+  ): Promise<void> {
+    await expect(this.byText(text, exact), message).toBeVisible();
+  }
+
+  public async assertVisibleByKey(key: LocatorKey, message?: string): Promise<void> {
+    const locator = await this.getWorkingLocatorByKey(key);
+    await expect(locator, message).toBeVisible();
+  }
+
+  // --------------------------
   // Text asserts
-  protected async assertTextMatchById(id: string, matchWith: string | RegExp, message?: string): Promise<void> {
+  // --------------------------
+
+  protected async assertTextMatchById(
+    id: string,
+    matchWith: string | RegExp,
+    message?: string
+  ): Promise<void> {
     await expect(this.byId(id), message).toContainText(matchWith);
   }
 
-  protected async assertTextMatchByDT(key: string, expectedText: string | RegExp, message?: string): Promise<void> {
+  protected async assertTextMatchByDT(
+    key: string,
+    expectedText: string | RegExp,
+    message?: string
+  ): Promise<void> {
     await expect(this.byDataTest(key), message).toContainText(expectedText);
   }
 
-  public async inputInElementByKey(key: LocatorKey, input: string, message?: string): Promise<void> {
-    await this.$(key).fill(input);
+  protected async assertTextMatchByRole(
+    role: Parameters<Page['getByRole']>[0],
+    name: string | RegExp,
+    expectedText: string | RegExp,
+    message?: string
+  ): Promise<void> {
+    await expect(this.byRole(role, name), message).toContainText(expectedText);
   }
 
-  public async clickByKey(key: LocatorKey, message?: string): Promise<void> {
-  await expect(this.$(key), message).toBeVisible();
-  await this.$(key).click();
-}
-
-public async assertVisibleByKey(key: LocatorKey, message?: string): Promise<void> {
-  await expect(this.$(key), message).toBeVisible();
-}
-
-public async assertContainsTextByKey(key: LocatorKey, expectedText: string | RegExp, message?: string): Promise<void> {
-  await expect(this.$(key), message).toContainText(expectedText);
-}
+  public async assertContainsTextByKey(
+    key: LocatorKey,
+    expectedText: string | RegExp,
+    message?: string
+  ): Promise<void> {
+    const locator = await this.getWorkingLocatorByKey(key);
+    await expect(locator, message).toContainText(expectedText);
+  }
 
   // --------------------------
-  // Visual compare (unchanged)
+  // Visual compare
   // --------------------------
 
   protected visualDefaults(): VisualCompareOptions {
