@@ -1,26 +1,43 @@
-# deps
+# dependencies
 node_modules/
+
+# environment files
+env/*.env
+.env
+.env.*
 
 # logs
 logs/
 *.log
 
-# cucumber json (in /reports)
-reports/cucumber-report.json
+# generated BDD specs
+.features-gen/
 
-# screenshots (root-level folder in your screenshot)
+# Playwright artifacts
+playwright-report/
+test-results/
+blob-report/
+
+# reports
+reports/
+*.xml
+
+# screenshots and visual artifacts
+screenshots/test.png
 screenshots/visual/actual/
 screenshots/visual/diff/
-screenshots/test.png
-env/*.env
 
-playwright-report/
-playwright-report/index.html
-playwright-report/**
+# videos / traces
+videos/
+trace/
+traces/
 
-test-results/
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
 
-# JUnit / other reports
-reports/
-reports/junit-results.xml
-reports/**
+# build output
+dist/
+coverage/
