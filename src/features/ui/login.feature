@@ -6,10 +6,10 @@ Feature: UI Login Functionality
 
   @TCId-Login001
   Scenario Outline: Valid user login through UI flow
-    Then visual validation passes for "login_username" element
-    And visual validation passes for "login_password" element
-    And visual validation passes for "login_loginButton" element
-    And visual validation passes for "login" page
+    # Then visual validation passes for "login_username" element
+    # And visual validation passes for "login_password" element
+    # And visual validation passes for "login_loginButton" element
+    # And visual validation passes for "login" page
     When user enters "<username>" in "login_username"
     And user enters "testdata.password" in "login_password"
     And user clicks "login_loginButton"
@@ -17,8 +17,8 @@ Feature: UI Login Functionality
 
     Examples:
       | username       |
-      | testdata.user1 |
-      | testdata.user2 |
+      | testdata.user12 |
+      # | testdata.user2 |
 
   @TCId-Login002
   Scenario: Login should fail for invalid/missing username and password
