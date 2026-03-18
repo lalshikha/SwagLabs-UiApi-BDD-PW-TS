@@ -10,4 +10,10 @@ Feature: UI Inventory Functionality
     And "inventory_hamburgerMenu" should be visible
     And "inventory_addToCartButton" should be visible
 
-    
+  @TCId-Inv002
+  Scenario: Verify page title is not Products123 on inventory page
+  # created using Playwright MCP
+    Given user opens "saucedemoUrl"
+    When user performs UI login with "testdata.username" and "testdata.password"
+    Then page title should not be "Products123"
+    And page title should be "Products"

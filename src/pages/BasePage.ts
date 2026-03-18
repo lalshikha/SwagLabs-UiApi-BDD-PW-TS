@@ -205,6 +205,14 @@ export default abstract class BasePage {
     await expect(this.byText(text, exact), message).toBeVisible();
   }
 
+  public async assertElementByTextIsNotVisible(
+    text: string | RegExp,
+    exact?: boolean,
+    message?: string
+  ): Promise<void> {
+    await expect(this.byText(text, exact), message).not.toBeVisible();
+  }
+
   public async assertVisibleByKey(key: LocatorKey, message?: string): Promise<void> {
     const locator = await this.getWorkingLocatorByKey(key);
     await expect(locator, message).toBeVisible();

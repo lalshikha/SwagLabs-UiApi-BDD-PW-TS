@@ -30,3 +30,7 @@ Then('{string} text should be {string}', async ({ commonPage }, key: string, exp
 Then('page title should be {string}', async ({ commonPage }, expectedText: string, exact?: boolean, message?: string) => {
   await commonPage.assertElementByTextIsVisible(expectedText, true, message || "Page title does not match expected value");
 });
+
+Then('page title should not be {string}', async ({ commonPage }, expectedText: string, message?: string) => {
+  await commonPage.assertElementByTextIsNotVisible(expectedText, true, message || "Page title should not match the given value");
+});

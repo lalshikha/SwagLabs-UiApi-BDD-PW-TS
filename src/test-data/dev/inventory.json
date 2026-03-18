@@ -2,5 +2,9 @@
   "TCId-Inv001": {
     "username": "standard_user",
     "password": "secret_sauce"
+  },
+  "TCId-Inv002": {
+    "username": "standard_user",
+    "password": "secret_sauce"
   }
 }
