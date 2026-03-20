@@ -34,3 +34,19 @@ Then('page title should be {string}', async ({ commonPage }, expectedText: strin
 Then('page title should not be {string}', async ({ commonPage }, expectedText: string, message?: string) => {
   await commonPage.assertElementByTextIsNotVisible(expectedText, true, message || "Page title should not match the given value");
 });
+
+Then('{string} should be a clickable link', async ({ commonPage }, key: string) => {
+  await commonPage.assertClickableLinkByKey(asLocatorKey(key));
+});
+
+Then('{string} text should not be {string}', async ({ commonPage }, key: string, unexpectedText: string) => {
+  await commonPage.assertNotContainsTextByKey(asLocatorKey(key), unexpectedText);
+});
+
+Then('{string} should be clickable', async ({ commonPage }, key: string) => {
+  await commonPage.assertClickableByKey(asLocatorKey(key));
+});
+
+Then('{string} should not be clickable', async ({ commonPage }, key: string) => {
+  await commonPage.assertNotClickableByKey(asLocatorKey(key));
+});

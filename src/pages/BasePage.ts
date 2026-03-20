@@ -256,6 +256,61 @@ export default abstract class BasePage {
     await expect(locator, message).toContainText(expectedText);
   }
 
+  public async assertClickableLinkByKey(locatorKey: LocatorKey, message?: string): Promise<void> {
+    const locator = await this.getWorkingLocatorByKey(locatorKey);
+
+  await locator.scrollIntoViewIfNeeded();
+
+  await expect(
+    locator,
+    message ?? `Expected "${String(locatorKey)}" to be visible`
+  ).toBeVisible();
+
+  await expect(
+    locator,
+    message ?? `Expected "${String(locatorKey)}" to be enabled`
+  ).toBeEnabled();
+
+  await expect(
+    locator,
+    message ?? `Expected "${String(locatorKey)}" to be an anchor link`
+  ).toHaveJSProperty('tagName', 'A');
+
+  await expect(
+    locator,
+    message ?? `Expected "${String(locatorKey)}" to have href`
+  ).toHaveAttribute('href', /.+/);
+}
+
+  public async assertNotContainsTextByKey(
+    key: LocatorKey,
+    unexpectedText: string | RegExp,
+    message?: string
+  ): Promise<void> {
+    const locator = await this.getWorkingLocatorByKey(key);
+    await expect(locator, message).not.toContainText(unexpectedText);
+  }
+
+  public async assertClickableByKey(locatorKey: LocatorKey, message?: string): Promise<void> {
+    const locator = await this.getWorkingLocatorByKey(locatorKey);
+    await expect(
+      locator,
+      message ?? `Expected "${String(locatorKey)}" to be clickable`
+    ).toBeEnabled();
+  }
+
+  public async assertNotClickableByKey(locatorKey: LocatorKey, message?: string): Promise<void> {
+    const locator = await this.getWorkingLocatorByKey(locatorKey);
+    // Check that element is NOT a button or link (common interactive elements)
+    const tagName = await locator.evaluate((el) => el.tagName);
+    const isInteractive = ['BUTTON', 'A', 'INPUT'].includes(tagName);
+    
+    await expect(
+      isInteractive,
+      message ?? `Expected "${String(locatorKey)}" to not be clickable (should not be a button, link, or input)`
+    ).toBeFalsy();
+  }
+
   // --------------------------
   // Visual compare
   // --------------------------
