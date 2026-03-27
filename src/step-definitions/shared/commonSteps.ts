@@ -1,13 +1,9 @@
 import { Given, When, Then } from '../../fixtures/Fixtures';
-import { testData, type TestData } from '../../utils/testData';
+import { getAppUrl } from '../../utils/testData';
 import { asLocatorKey } from '../../utils/asLocatorKey';
 
-Given('user opens {string}', async ({ page }, urlKey: string) => {
-  const key = urlKey.trim() as keyof TestData;
-  if (!(key in testData)) {
-    throw new Error(`Unknown url key "${urlKey}". Valid keys: ${Object.keys(testData).join(', ')}`);
-  }
-  await page.goto(testData[key]);
+Given('user opens the application', async ({ page }) => {
+  await page.goto(getAppUrl());
   await page.waitForLoadState('networkidle');
 });
 

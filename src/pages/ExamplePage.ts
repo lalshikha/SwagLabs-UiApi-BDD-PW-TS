@@ -19,7 +19,7 @@
  * - Return 'this' for method chaining where appropriate
  */
 
-import { BasePage } from './BasePage';
+import BasePage from './BasePage';
 import { asLocatorKey } from '../utils/asLocatorKey';
 
 export class ExamplePage extends BasePage {
