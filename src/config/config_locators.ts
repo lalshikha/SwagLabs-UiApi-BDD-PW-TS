@@ -1,3 +1,44 @@
+/**
+ * APPLICATION LOCATORS TEMPLATE
+ * 
+ * ⚠️ CUSTOMIZATION REQUIRED: This file defines all UI element locators for your application.
+ * 
+ * INSTRUCTIONS:
+ * 1. Replace all locators below with your APPLICATION'S element selectors
+ * 2. Add locators for every element your tests interact with
+ * 3. Maintain the structure: pageName_elementDescription pattern
+ * 4. Use descriptive names so developers know what each locator refers to
+ * 
+ * NAMING CONVENTION:
+ * Pattern: {pageArea}_{elementDescription}
+ * Examples:
+ *   - login_usernameInput
+ *   - login_passwordInput
+ *   - login_submitButton
+ *   - dashboard_welcomeHeading
+ *   - products_filterButton
+ * 
+ * LOCATOR STRATEGIES (in recommended priority order):
+ * 1. data-testid    : Best for maintainability (dev-friendly, stable)
+ * 2. Roles/ARIA     : Accessibility-first (aria-label, role)
+ * 3. Text matching  : User-centric (buttons/labels)
+ * 4. CSS selectors  : Generic fallback
+ * 5. XPath          : Avoid unless absolutely necessary (brittle)
+ * 
+ * EXAMPLES:
+ * - data-testid: '[data-testid="username-field"]'
+ * - role: 'button:has-text("Sign In")'
+ * - text: 'text:Welcome User'
+ * - role: 'role:button|Submit'
+ * 
+ * FALLBACK SUPPORT:
+ * You can specify primary + fallback locators for resilience:
+ * {
+ *   primary: '[data-testid="login-btn"]',
+ *   fallbacks: ['#loginButton', 'button:has-text("Login")']
+ * }
+ */
+
 export type LocatorDef =
   | string
   | {
@@ -5,94 +46,62 @@ export type LocatorDef =
       fallbacks?: string[];
     };
 
-// One central place for all locator keys.
-// Plain string values are still supported for backward compatibility.
-// Supported prefixes:
-// - css:
-// - id:
-// - title:
-// - text:
-// - role:
+const L = {
+  // ============================================
+  // LOGIN PAGE EXAMPLES - Replace with your app
+  // ============================================
+  // TODO: Replace with YOUR application's login page locators
+  login_usernameInput: '[data-testid="username-field"]',  // TODO: Your selector
+  login_passwordInput: '[data-testid="password-field"]',  // TODO: Your selector
+  login_submitButton: 'button:has-text("Sign In")',       // TODO: Your selector
+  login_errorMessage: '[role="alert"]',                  // TODO: Your selector
+  login_forgotPasswordLink: 'text:Forgot Password?',     // TODO: Your selector
 
-export const L = {
-  // Login page
-  login_username: 'username',
-  login_password: 'password',
-  login_loginButton: {
-    primary: 'login-button-old',
-    fallbacks: ['login-button'],
-  },
-  login_error: 'error',
+  // ============================================
+  // DASHBOARD PAGE EXAMPLES - Create similar sections for your pages
+  // ============================================
+  // TODO: Add YOUR application's dashboard/home page locators
+  dashboard_heading: 'h1:has-text("Dashboard")',          // TODO: Your selector
+  dashboard_welcomeMessage: '[data-testid="welcome"]',     // TODO: Your selector
+  dashboard_logoutButton: '[data-testid="logout-btn"]',    // TODO: Your selector
+  dashboard_userMenu: '[aria-label="User menu"]',          // TODO: Your selector
 
-  // Inventory page - Header/Navigation
-  inventory_headerContainer: 'header-container',
-  inventory_primaryHeader: 'primary-header',
-  inventory_secondaryHeader: 'secondary-header',
-  inventory_openMenu: 'open-menu',
-  inventory_closeMenu: 'close-menu',
-  inventory_hamburgerMenu: 'role:button|Open Menu',
-  inventory_allItemsLink: 'inventory-sidebar-link',
-  inventory_aboutLink: 'about-sidebar-link',
-  inventory_logoutLink: 'logout-sidebar-link',
-  inventory_resetAppStateLink: 'reset-sidebar-link',
-  inventory_shoppingCartLink: 'shopping-cart-link',
-
-  // Inventory page - Title and Sorting
-  inventory_pageTitle: 'text:Products',
-  inventory_title: 'title',
-  inventory_productSortContainer: 'product-sort-container',
-  inventory_activeOption: 'active-option',
-
-  // Inventory page - Product Container
-  inventory_page: 'inventory-container',
-  inventory_container: 'inventory-container',
-  inventory_list: 'inventory-list',
-  inventory_item: 'inventory-item',
-
-  // Inventory page - Sauce Labs Backpack
-  inventory_backpackImgLink: 'item-4-img-link',
-  inventory_backpackImg: 'inventory-item-sauce-labs-backpack-img',
-  inventory_backpackTitleLink: 'item-4-title-link',
-  inventory_backpackPrice: 'css:[data-test="inventory-list"] > [data-test="inventory-item"]:nth-child(1) [data-test="inventory-item-price"]',
-  inventory_addToCartButton: 'add-to-cart-sauce-labs-backpack',
-
-  // Inventory page - Sauce Labs Bike Light
-  inventory_bikeLightImgLink: 'item-0-img-link',
-  inventory_bikeLightImg: 'inventory-item-sauce-labs-bike-light-img',
-  inventory_bikeLightTitleLink: 'item-0-title-link',
-  inventory_bikeLightPrice: 'css:[data-test="inventory-list"] > [data-test="inventory-item"]:nth-child(2) [data-test="inventory-item-price"]',
-  inventory_bikeLightAddToCart: 'add-to-cart-sauce-labs-bike-light',
-
-  // Inventory page - Sauce Labs Bolt T-Shirt
-  inventory_boltTShirtImgLink: 'item-1-img-link',
-  inventory_boltTShirtImg: 'inventory-item-sauce-labs-bolt-t-shirt-img',
-  inventory_boltTShirtTitleLink: 'item-1-title-link',
-  inventory_boltTShirtAddToCart: 'add-to-cart-sauce-labs-bolt-t-shirt',
-
-  // Inventory page - Sauce Labs Fleece Jacket
-  inventory_fleecJacketImgLink: 'item-5-img-link',
-  inventory_fleecJacketImg: 'inventory-item-sauce-labs-fleece-jacket-img',
-  inventory_fleecJacketTitleLink: 'item-5-title-link',
-  inventory_fleecJacketAddToCart: 'add-to-cart-sauce-labs-fleece-jacket',
-
-  // Inventory page - Sauce Labs Onesie
-  inventory_onesieImgLink: 'item-2-img-link',
-  inventory_onesieImg: 'inventory-item-sauce-labs-onesie-img',
-  inventory_onesieTitleLink: 'item-2-title-link',
-  inventory_onesieAddToCart: 'add-to-cart-sauce-labs-onesie',
-
-  // Inventory page - Test.allTheThings() T-Shirt (Red)
-  inventory_redTShirtImgLink: 'item-3-img-link',
-  inventory_redTShirtImg: 'inventory-item-test.allthethings()-t-shirt-(red)-img',
-  inventory_redTShirtTitleLink: 'item-3-title-link',
-  inventory_redTShirtAddToCart: 'add-to-cart-test.allthethings()-t-shirt-(red)',
-
-  // Inventory page - Footer
-  inventory_footer: 'footer',
-  inventory_socialTwitter: 'social-twitter',
-  inventory_socialFacebook: 'social-facebook',
-  inventory_socialLinkedin: 'social-linkedin',
-  inventory_footerCopy: 'footer-copy',
+  // ============================================
+  // ADD MORE PAGES HERE AS YOU EXPAND THE FRAMEWORK
+  // ============================================
+  // PATTERN: Copy the section above for each new page
+  // Example: CHECKOUT_PAGE, PRODUCTS_PAGE, SETTINGS_PAGE, etc.
+  //
+  // products_filterButton: '[data-testid="filter"]',
+  // products_searchInput: '[data-testid="search"]',
+  // products_itemCard: '[data-testid="product-item"]',
+  //
+  // cart_itemRow: '.cart-item',
+  // cart_checkoutButton: '[data-testid="checkout"]',
+  //
+  // settings_saveButton: '[data-testid="save"]',
+  // settings_cancelButton: '[data-testid="cancel"]',
 } as const satisfies Record<string, LocatorDef>;
 
+/**
+ * Type-safe locator key extraction
+ * Prevents typos at compile-time; steps can't reference non-existent keys
+ */
 export type LocatorKey = keyof typeof L;
+
+/**
+ * Validate that all locator keys follow naming convention
+ * Logs warnings for keys that don't follow {pageName}_{elementDescription}
+ */
+export const validateLocatorConfiguration = () => {
+  Object.entries(L).forEach(([key]) => {
+    if (!key.includes('_')) {
+      console.warn(
+        `⚠️ Locator key "${key}" should follow pattern: pageName_elementDescription`
+      );
+    }
+  });
+};
+
+// Export for use in page objects and type validation
+export { L };

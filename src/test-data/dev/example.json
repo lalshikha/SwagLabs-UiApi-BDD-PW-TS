@@ -1,0 +1,41 @@
+{
+  "_INSTRUCTIONS": {
+    "usage": "Test data template for your application",
+    "structure": "Each TCId (TestCaseId) maps to test scenario data",
+    "mapping": "Feature files tagged with @TCId-XXX load corresponding data from this file",
+    "example": "Feature with @TCId-Example001 tag loads TCId-Example001 data object",
+    "extension": "Add your own TCIds following this pattern as you expand tests"
+  },
+
+  "TCId-Example001": {
+    "_description": "Successful login with valid user credentials",
+    "username": "testuser@example.com",
+    "password": "SecurePassword123!",
+    "expectedResult": "User logged in successfully",
+    "expectedMessage": ""
+  },
+
+  "TCId-Example002": {
+    "_description": "Failed login with invalid credentials",
+    "invalidUsername": "nonexistent@example.com",
+    "invalidPassword": "WrongPassword987!",
+    "expectedResult": "Login fails",
+    "expectedErrorMessage": "Invalid username or password"
+  },
+
+  "TCId-Example003": {
+    "_description": "Multiple test case variations",
+    "validUser1": "user1@example.com",
+    "validPassword1": "UserPass123!",
+    "validUser2": "user2@example.com",
+    "validPassword2": "AnotherPass456!",
+    "invalidUser": "fake@example.com",
+    "invalidPass": "FakePass789!"
+  },
+
+  "_REFERENCE_DATA": {
+    "NOTE": "This section is optional - use for common/shared test data",
+    "environments": ["dev", "staging", "prod"],
+    "browsers": ["chromium", "firefox", "webkit"]
+  }
+}

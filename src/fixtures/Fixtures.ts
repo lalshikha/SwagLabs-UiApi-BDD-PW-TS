@@ -5,14 +5,12 @@ import path from 'path';
 import { request, type APIRequestContext, type TestInfo } from '@playwright/test';
 import { test as base, createBdd } from 'playwright-bdd';
 
-import LoginPage from '../pages/LoginPage';
-import InventoryPage from '../pages/InventoryPage';
+import { ExamplePage } from '../pages/ExamplePage';
 import CommonPage from '../pages/CommonPage';
 import ApiService from '../services/ApiService';
 
 export type AppFixtures = {
-  loginPage: LoginPage;
-  inventoryPage: InventoryPage;
+  examplePage: ExamplePage;
   commonPage: CommonPage;
 
   apiContext: APIRequestContext;
@@ -99,12 +97,8 @@ export const test = base.extend<AppFixtures>({
     await use((value: string) => String(resolveTestData(value, $testInfo)));
   },
 
-  loginPage: async ({ page }, use) => {
-    await use(new LoginPage(page));
-  },
-
-  inventoryPage: async ({ page }, use) => {
-    await use(new InventoryPage(page));
+  examplePage: async ({ page }, use) => {
+    await use(new ExamplePage(page));
   },
 
   commonPage: async ({ page }, use) => {
@@ -115,7 +109,7 @@ export const test = base.extend<AppFixtures>({
     const baseURL =
       process.env.API_BASE_URL ??
       process.env.APP_URL ??
-      'https://www.saucedemo.com/';
+      'http://localhost:3000';
 
     const ctx = await request.newContext({ baseURL });
     await use(ctx);
@@ -123,7 +117,9 @@ export const test = base.extend<AppFixtures>({
   },
 
   apiService: async ({ apiContext }, use) => {
-    await use(new ApiService(apiContext));
+    // ⚠️ CUSTOMIZATION: ApiService now receives baseUrl from environment
+    const baseUrl = process.env.API_BASE_URL ?? process.env.APP_URL ?? 'http://localhost:3000';
+    await use(new ApiService(apiContext, baseUrl));
   },
 });
 

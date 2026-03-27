@@ -82,7 +82,9 @@ export default abstract class BasePage {
       return [def];
     }
 
-    return [def.primary, ...(def.fallbacks ?? [])];
+    // After typeof check, TypeScript knows def is { primary: string; fallbacks?: string[] }
+    const objectDef = def as { primary: string; fallbacks?: string[] };
+    return [objectDef.primary, ...(objectDef.fallbacks ?? [])];
   }
 
   /** Returns the primary locator only. */

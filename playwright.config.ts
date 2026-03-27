@@ -34,7 +34,10 @@ export default defineConfig({
     ['./src/reporters/flaky-reporter.ts'],
   ],
   use: {
-    baseURL: process.env.APP_URL ?? 'https://www.saucedemo.com/',
+    // ⚠️ CUSTOMIZATION REQUIRED: Set APP_URL environment variable
+    // Example: export APP_URL=https://your-app.com
+    // Set in: .env file (local) or CI/CD secrets (pipeline)
+    baseURL: process.env.APP_URL || 'http://localhost:3000',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     actionTimeout: 60 * 1000,

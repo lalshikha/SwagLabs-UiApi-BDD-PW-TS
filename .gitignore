@@ -41,3 +41,9 @@ Thumbs.db
 # build output
 dist/
 coverage/
+
+# Playwright
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/

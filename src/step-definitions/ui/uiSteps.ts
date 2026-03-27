@@ -1,6 +1,11 @@
-// step-definitions/common/visualValidationSteps.ts  (use your actual filename)
+/**
+ * UI VALIDATION STEPS - Generic visual & UI tests
+ * 
+ * These steps are reusable across different features
+ * They validate UI elements and visual regression
+ */
+
 import { Then } from '../../fixtures/Fixtures';
-import { saucedemoUrl } from '../../utils/testData';
 import { asLocatorKey } from '../../utils/asLocatorKey';
 
 Then(
