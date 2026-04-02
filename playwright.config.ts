@@ -8,7 +8,7 @@ const envFile = path.resolve(process.cwd(), 'env', `${ENV}.env`);
 dotenv.config({ path: envFile });
 console.log(`Loaded environment variables from ${envFile}`);
 
-const RETRIES = Number(process.env.PW_RETRIES ?? (process.env.CI ? 2 : 2));
+const RETRIES = Number(process.env.PW_RETRIES ?? (process.env.CI ? 1 : 0));
 
 const testDir = defineBddConfig({
   features: ['src/features/**/*.feature'],
@@ -23,22 +23,22 @@ const testDir = defineBddConfig({
 
 export default defineConfig({
   testDir,
-  timeout: 60 * 1000,
+  timeout: 30 * 1000,
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: RETRIES,
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 2 : undefined,
   reporter: [
     ['html'],
     ['junit', { outputFile: 'reports/junit-results.xml' }],
     ['./src/reporters/flaky-reporter.ts'],
   ],
   use: {
-    baseURL: process.env.APP_URL ?? 'https://www.saucedemo.com/',
+    baseURL: process.env.APP_URL || 'http://localhost:3000',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
-    actionTimeout: 60 * 1000,
-    navigationTimeout: 60 * 1000,
+    actionTimeout: 15 * 1000,
+    navigationTimeout: 15 * 1000,
   },
   projects: [
     {
