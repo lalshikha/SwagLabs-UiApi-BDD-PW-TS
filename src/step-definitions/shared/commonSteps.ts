@@ -8,7 +8,9 @@ Given('user opens the application', async ({ page }) => {
 });
 
 When('user enters {string} in {string}', async ({ commonPage, td }, value: string, key: string) => {
-  await commonPage.inputInElementByKey(asLocatorKey(key), td(value));
+  // Handle EMPTY placeholder for Scenario Outline examples (represents empty string)
+  const actualValue = value === 'EMPTY' ? '' : td(value);
+  await commonPage.inputInElementByKey(asLocatorKey(key), actualValue);
 });
 
 When('user clicks {string}', async ({ commonPage }, key: string) => {

@@ -1,85 +1,73 @@
 /**
- * EXAMPLE STEP DEFINITIONS - TEMPLATE
+ * EXAMPLE STEP DEFINITIONS - TEMPLATE (For Complex Logic Only)
  * 
- * ⚠️ CUSTOMIZATION REQUIRED: Use this as a template for your step definitions.
+ * ⚠️ IMPORTANT: DO NOT USE FOR SIMPLE UI INTERACTIONS
  * 
- * INSTRUCTIONS:
- * 1. Rename file to match your feature area (e.g., dashboardSteps.ts, productsSteps.ts)
- * 2. Replace 'examplePage' with your application's page objects
- * 3. Replace step texts with your application's Gherkin vocabulary
- * 4. Keep using fixture injection - do NOT create global page instances
- * 5. Use asLocatorKey() to validate locator keys at compile-time
+ * YOU PROBABLY DON'T NEED THIS FILE!
+ * Use commonSteps.ts for 95% of your test automation.
+ * 
+ * Available Generic Steps (Use these instead):
+ * - Given user opens the application
+ * - When user enters "{string}" in "{string}"
+ * - When user clicks "{string}"
+ * - Then "{string}" should be visible
+ * - Then "{string}" text should be "{string}"
+ * 
+ * INSTRUCTIONS (If you must create custom steps):
+ * 1. Rename file to match feature area: dashboardSteps.ts, checkoutSteps.ts
+ * 2. Only add steps for COMPLEX workflows
+ * 3. Keep using fixture injection (do NOT create global instances)
+ * 4. Use asLocatorKey() for compile-time validation
  * 
  * PATTERN:
- * - Import { Given, When, Then } from fixtures
- * - Replace fixture names with your page objects
- * - Each step performs ONE user action
- * - Step text should be readable business language
+ * - Import { When, Then, Given } from fixtures
+ * - Each step performs ONE logical user action
+ * - Use this.logger for debugging
+ * - Reference locator keys from config_locators.ts
  * - Use td() helper for test data resolution
+ * 
+ * Example of COMPLEX step (worth custom code):
+ * - Parse a data grid and validate content
+ * - Multi-step checkout workflow
+ * - Complex form validation with cross-field dependencies
  */
 
 import { When, Then, Given } from '../../fixtures/Fixtures';
 import { asLocatorKey } from '../../utils/asLocatorKey';
 
 /**
- * Example: Navigate to page
+ * EXAMPLE: Complex workflow step (Only if absolutely necessary)
+ * 
+ * ⚠️ Consider using commonSteps instead:
+ * Instead of: When user performs complex checkout
+ * Use:
+ *   When user enters "testdata.email" in "checkout_emailInput"
+ *   And user enters "testdata.cardNumber" in "checkout_cardInput"
+ *   And user clicks "checkout_submitButton"
  */
-Given('user navigates to {string}', async ({ page }, url: string) => {
-  // TODO: Replace with your app's navigation logic or use specific page objects
-  await page.goto(url);
+When('user performs complex order validation', async ({ commonPage, td }) => {
+  // TODO: Only implement if this multi-step workflow cannot be expressed
+  // as separate generic steps in the feature file
+  
+  // Example: Validate order contains specific items and total
+  // const items = await commonPage.getAllVisibleText('order_itemRow');
+  // const total = await commonPage.getTextByKey('order_total');
+  // if (items.length === 0) throw new Error('No items in order');
 });
 
 /**
- * Example: Fill form field with test data
- * TODO: Replace with your actual step and field names
+ * EXAMPLE: Complex assertion (Only if simple text matching won't work)
+ * 
+ * ⚠️ Consider using commonSteps instead:
+ * Instead of: Then order total should be calculated correctly
+ * Use:
+ *   Then "order_totalAmount" text should be "$123.45"
  */
-When('user fills username with {string}', async ({ examplePage, td }, dataKey: string) => {
-  const username = td(dataKey);
-  await examplePage.fillUsername(username);
-});
-
-/**
- * Example: Fill password field
- */
-When('user fills password with {string}', async ({ examplePage, td }, dataKey: string) => {
-  const password = td(dataKey);
-  await examplePage.fillPassword(password);
-});
-
-/**
- * Example: Click button action
- */
-When('user clicks login button', async ({ examplePage }) => {
-  await examplePage.clickLogin();
-});
-
-/**
- * Example: Composite step - login in one go
- */
-When('user logs in with {string} and {string}', async ({ examplePage, td }, usernameKey: string, passwordKey: string) => {
-  const username = td(usernameKey);
-  const password = td(passwordKey);
-  await examplePage.loginAs(username, password);
-});
-
-/**
- * Example: Verify error message
- */
-Then('error message should be displayed', async ({ examplePage }) => {
-  const isDisplayed = await examplePage.isErrorMessageDisplayed();
-  if (!isDisplayed) {
-    throw new Error('Error message was not displayed');
-  }
-});
-
-/**
- * Example: Verify specific error text
- */
-Then('error message should contain {string}', async ({ examplePage }, expectedText: string) => {
-  const errorText = await examplePage.getErrorMessageText();
-  if (!errorText.includes(expectedText)) {
-    throw new Error(`Expected error to contain "${expectedText}", but got: "${errorText}"`);
-  }
+Then('complex data validation passes', async ({ commonPage }) => {
+  // TODO: Only implement complex assertions here
+  // For simple text checks, use commonSteps:
+  // Then "{locatorKey}" text should be "{expectedText}"
+  throw new Error('Implement your complex assertion logic here');
 });
 
 // TODO: Add your application-specific steps here, following the pattern above

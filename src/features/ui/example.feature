@@ -26,42 +26,31 @@ Feature: Example Application Login
   # Background runs before each scenario in this feature
   Background:
     # TODO: Replace with your app's login page URL or use baseURL from config
-    Given user navigates to the login page
+    Given user opens "loginUrl"
 
   # SCENARIO 1: Successful login
   @TCId-Example001 @smoke
   Scenario: User can login with valid credentials
-    # TODO: Update scenario name to match your app's terminology
-    
-    # TODO: Replace step and data keys with your actual field names
-    When user fills username with "testdata.username"
-    And user fills password with "testdata.password"
-    And user clicks login button
-    
-    # TODO: Replace with your app's success indicator (dashboard heading, URL, etc.)
-    Then user should be logged in successfully
+    When user enters "testdata.username" in "login_username"
+    And user enters "testdata.password" in "login_password"
+    And user clicks "login_loginButton"
+    Then "dashboard_page" should be visible
 
   # SCENARIO 2: Failed login with invalid credentials
   @TCId-Example002 @smoke
   Scenario: User sees error for invalid credentials
-    # TODO: Update scenario name and steps for your app
-    
-    When user fills username with "testdata.invalidUsername"
-    And user fills password with "testdata.invalidPassword"
-    And user clicks login button
-    
-    # TODO: Replace with your app's error validation
-    Then error message should be displayed
-    And error message should contain "Invalid credentials"
+    When user enters "testdata.invalidUsername" in "login_username"
+    And user enters "testdata.invalidPassword" in "login_password"
+    And user clicks "login_loginButton"
+    Then "login_error" should be visible
+    And "login_error" text should be "Invalid credentials"
 
   # SCENARIO 3: Multiple test cases using scenario outline
   @TCId-Example003
   Scenario Outline: Various login attempts
-    # TODO: Add more variations or delete if not needed for your app
-    
-    When user fills username with "<username>"
-    And user fills password with "<password>"
-    And user clicks login button
+    When user enters "<username>" in "login_username"
+    And user enters "<password>" in "login_password"
+    And user clicks "login_loginButton"
     Then login should complete with result: "<expected_result>"
 
     # TODO: Update examples with your app's test cases

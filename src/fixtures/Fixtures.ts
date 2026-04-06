@@ -5,12 +5,10 @@ import path from 'path';
 import { request, type APIRequestContext, type TestInfo } from '@playwright/test';
 import { test as base, createBdd } from 'playwright-bdd';
 
-import { ExamplePage } from '../pages/ExamplePage';
 import CommonPage from '../pages/CommonPage';
 import ApiService from '../services/ApiService';
 
 export type AppFixtures = {
-  examplePage: ExamplePage;
   commonPage: CommonPage;
 
   apiContext: APIRequestContext;
@@ -95,10 +93,6 @@ export const test = base.extend<AppFixtures>({
 
   td: async ({ resolveTestData, $testInfo }, use) => {
     await use((value: string) => String(resolveTestData(value, $testInfo)));
-  },
-
-  examplePage: async ({ page }, use) => {
-    await use(new ExamplePage(page));
   },
 
   commonPage: async ({ page }, use) => {
