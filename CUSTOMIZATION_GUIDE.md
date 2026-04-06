@@ -33,6 +33,41 @@ Follow this guide to customize it for your application. **If you follow these st
 
 ---
 
+## ⚠️ IMPORTANT: Example Files Are Templates Only
+
+**Before you start customizing:** The framework includes example files for reference. These are **templates, not production code**.
+
+### What to Delete:
+1. **Delete the example feature file:**
+   ```bash
+   rm src/features/ui/example.feature
+   ```
+
+2. **Delete the example test data:**
+   ```bash
+   rm src/test-data/dev/example.json
+   ```
+
+3. **Remove example imports from step definitions and other files:**
+   - Search for `example` in `src/step-definitions/` and remove any imports
+   - Search for `example` in `src/pages/` and remove ExamplePage imports
+   - Remove any references to `exampleSteps` from your test configuration
+
+4. **Clean up page objects:**
+   ```bash
+   rm src/pages/ExamplePage.ts (if it exists)
+   rm src/step-definitions/ui/exampleSteps.ts (if it exists)
+   ```
+
+**Why?** Having example code in your project can cause confusion during test runs and may be picked up by test discovery. A clean slate ensures you're only running tests you've explicitly created.
+
+### After Cleanup:
+- Only your custom feature files will run
+- Only your custom test data will be loaded
+- The framework is ready for your application
+
+---
+
 ## Quick Start: The 5-Step Process
 
 ### **Step 1: Configure Your Application URLs**
@@ -214,6 +249,8 @@ npm test
 # Flaky tests: 0
 # Failed after retries: 0
 ```
+
+**CRITICAL:** Make sure you've deleted all example files BEFORE running tests. If you see tests failing for `example.feature` or cannot find test data, delete the example files as described in the "Example Files Are Templates Only" section above.
    - Make sure `data-test` attribute exists with exact value
    - Use Playwright Inspector: `npm run pw:debug`
 
@@ -437,6 +474,7 @@ npx playwright test --debug
 
 Flaky tests: 0
 Failed after retries: 0
+
 ```
 
 ---
@@ -509,6 +547,17 @@ Failed after retries: 0
 - **Check working directory**: Tests run from project root
 - **Check node version**: `node --version` must match package.json engines
 - **Check dependencies**: Run `npm install` before tests
+
+### **Example File Still Running Tests**
+
+- **Problem**: Tests are running for `example.feature` but you haven't created them
+- **Cause**: Example template files were not deleted before running tests
+- **Solution**: 
+  - Delete `src/features/ui/example.feature`
+  - Delete `src/test-data/dev/example.json`
+  - Delete `src/pages/ExamplePage.ts` if it exists
+  - Remove `exampleSteps.ts` and `flakyDemoSteps.ts` if present
+  - Search codebase for "example" and remove any imports in config or fixtures
 
 ### **Debugging Tips**
 
