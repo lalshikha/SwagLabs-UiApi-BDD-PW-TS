@@ -25,7 +25,7 @@ import { asLocatorKey } from '../utils/asLocatorKey';
 export class ExamplePage extends BasePage {
   /**
    * Example: Fill username field
-   * Replace method name and locator key with your app's requirements
+   * Replace method name and locator key with your app's requirements as needed
    */
   async fillUsername(username: string): Promise<void> {
     // TODO: Replace 'login_usernameInput' with your actual locator key
